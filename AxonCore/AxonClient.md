@@ -40,14 +40,16 @@
         * [.fetchGuildConf(gID)](#AxonClient+fetchGuildConf) ⇒ <code>Promise.&lt;Object&gt;</code>
         * [.resolvePrefix(msg)](#AxonClient+resolvePrefix) ⇒ <code>String</code>
         * [.resolveCommand(label, args, guildConf)](#AxonClient+resolveCommand) ⇒ <code>Object</code>
-        * [.getGuildConf(gID)](#AxonClient+getGuildConf) ⇒ <code>Promise</code>
-        * [.updateGuildConf(gID, guildSchema)](#AxonClient+updateGuildConf) ⇒ <code>Promise</code>
+        * [.getGuildConf(gID)](#AxonClient+getGuildConf) ⇒ <code>Promise.&lt;Object&gt;</code>
+        * [.updateGuildConf(gID, guildSchema)](#AxonClient+updateGuildConf) ⇒ <code>Promise.&lt;Object&gt;</code>
         * [.registerGuildPrefix(gID, prefixArr)](#AxonClient+registerGuildPrefix) ⇒ <code>Promise.&lt;Object&gt;</code>
-        * [.updateBlacklistUser(userID, boolean)](#AxonClient+updateBlacklistUser) ⇒ <code>Promise.&lt;Object&gt;</code>
-        * [.updateBlacklistGuild(guildID, boolean)](#AxonClient+updateBlacklistGuild) ⇒ <code>Promise.&lt;Object&gt;</code>
-        * [.updateStateModule(guildID, label, boolean)](#AxonClient+updateStateModule) ⇒ <code>Promise.&lt;Object&gt;</code>
-        * [.updateStateCommand(guildID, label, boolean)](#AxonClient+updateStateCommand) ⇒ <code>Promise.&lt;Object&gt;</code>
-        * [.updateStateEvent(guildID, label, boolean)](#AxonClient+updateStateEvent) ⇒ <code>Promise.&lt;Object&gt;</code>
+        * [.updateBlacklistUser(userID, [boolean])](#AxonClient+updateBlacklistUser) ⇒ <code>Promise.&lt;Object&gt;</code>
+        * [.updateBlacklistGuild(guildID, [boolean])](#AxonClient+updateBlacklistGuild) ⇒ <code>Promise.&lt;Object&gt;</code>
+        * [.updateGuildStateModule(guildID, label, [boolean])](#AxonClient+updateGuildStateModule) ⇒ <code>Promise.&lt;Object&gt;</code>
+        * [.updateGuildStateCommand(guildID, label, [boolean])](#AxonClient+updateGuildStateCommand) ⇒ <code>Promise.&lt;Object&gt;</code>
+        * [.updateStateEvent(guildID, label, [boolean])](#AxonClient+updateStateEvent) ⇒ <code>Promise.&lt;Object&gt;</code>
+        * [.updateGlobalStateModule(module, [state])](#AxonClient+updateGlobalStateModule)
+        * [.updateGlobalStateCommand(command, [state])](#AxonClient+updateGlobalStateCommand)
     * _static_
         * [.AxonClient](#AxonClient.AxonClient)
             * [new AxonClient(token, options, axonOptions, modules)](#new_AxonClient.AxonClient_new)
@@ -134,7 +136,7 @@ Client specification
 
 ### axonClient.start()
 START METHOD
-AxonClient class already created
+AxonClient class is already created
 
 **Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
 <a name="AxonClient+onReady"></a>
@@ -190,8 +192,8 @@ Default method. Overridden by initStatus in child.
 <a name="AxonClient+onMessageCreate"></a>
 
 ### axonClient.onMessageCreate(msg)
-Handler when a message is created
-do all test and then either:
+Handler when a message is created.
+Do all test and then either:
   - call execDm
   - call execAdmin
   - call execCommand
@@ -201,7 +203,7 @@ do all test and then either:
 
 | Param | Type | Description |
 | --- | --- | --- |
-| msg | <code>Object.&lt;Message&gt;</code> | the message object |
+| msg | <code>Object.&lt;Message&gt;</code> | The message object |
 
 <a name="AxonClient+_execCommand"></a>
 
@@ -233,8 +235,8 @@ Call command._executeAdmin
 | Param | Type | Description |
 | --- | --- | --- |
 | msg | <code>Object.&lt;Message&gt;</code> | Message Object |
-| guildConf | <code>Oject</code> | guild config |
-| isOwner | <code>Boolean</code> | the user is bot owner or not |
+| guildConf | <code>Oject</code> | Guild config |
+| isOwner | <code>Boolean</code> | Whether the user is bot owner |
 
 <a name="AxonClient+_execDM"></a>
 
@@ -263,7 +265,7 @@ Do all necessary checker too (label resolved was help)
 | --- | --- | --- |
 | msg | <code>Object.&lt;Message&gt;</code> | The message object |
 | args | <code>Array.&lt;String&gt;</code> | Array of argument |
-| guildConf | <code>Object</code> | guildConfig from the DB |
+| guildConf | <code>Object</code> | GuildConfig from the DB |
 
 <a name="AxonClient+sendFullHelp"></a>
 
@@ -272,10 +274,11 @@ Send full help in DM
 Respecting permissions
 
 **Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
+**Returns**: <code>Promise.&lt;Message&gt;</code> - Message Object  
 
-| Param | Type |
-| --- | --- |
-| msg | <code>Object.&lt;Message&gt;</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| msg | <code>Object.&lt;Message&gt;</code> | The message object |
 
 <a name="AxonClient+_isGuildIgnored"></a>
 
@@ -283,7 +286,7 @@ Respecting permissions
 Check if the user/role/channel is guild ignored
 
 **Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
-**Returns**: <code>Boolean</code> - true if either one of the three is ignored / false if none  
+**Returns**: <code>Boolean</code> - True if either one of the three is ignored / False if none  
 
 | Param | Type |
 | --- | --- |
@@ -296,7 +299,7 @@ Check if the user/role/channel is guild ignored
 Check if the command is server disabled
 
 **Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
-**Returns**: <code>Boolean</code> - true if disabled / undefined if not  
+**Returns**: <code>Boolean</code> - True if disabled / Undefined if not  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -309,7 +312,7 @@ Check if the command is server disabled
 Check if the module is server disabled
 
 **Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
-**Returns**: <code>Boolean</code> - true if disabled / undefined if not  
+**Returns**: <code>Boolean</code> - True if disabled / Undefined if not  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -331,7 +334,7 @@ Fetch and resolve guild Config from Database
 Create a schema if none found or error
 
 **Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
-**Returns**: <code>Promise.&lt;Object&gt;</code> - - Guild schema from the DB / error  
+**Returns**: <code>Promise.&lt;Object&gt;</code> - Guild schema from the DB / Error  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -345,7 +348,7 @@ If the message starts with one of the guild prefix it return the prefix
 Else it return undefined (no guild prefix used)
 
 **Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
-**Returns**: <code>String</code> - The prefix if found / undefined if not  
+**Returns**: <code>String</code> - The prefix if found / Undefined if not  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -357,7 +360,7 @@ Else it return undefined (no guild prefix used)
 Resolve the command Object
 
 **Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
-**Returns**: <code>Object</code> - - the command object / undefined if the command doesn't exist  
+**Returns**: <code>Object</code> - The command object / Undefined if the command doesn't exist  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -367,12 +370,12 @@ Resolve the command Object
 
 <a name="AxonClient+getGuildConf"></a>
 
-### axonClient.getGuildConf(gID) ⇒ <code>Promise</code>
-Get guildConfig from cache || DB
-Cache it if not cached
+### axonClient.getGuildConf(gID) ⇒ <code>Promise.&lt;Object&gt;</code>
+Get (or create) guildConfig from cache || DB
+Cache the guildConfig if not already cached
 
 **Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
-**Returns**: <code>Promise</code> - guildConf object fetched  
+**Returns**: <code>Promise.&lt;Object&gt;</code> - GuildConf fetched  
 
 | Param | Type |
 | --- | --- |
@@ -380,12 +383,12 @@ Cache it if not cached
 
 <a name="AxonClient+updateGuildConf"></a>
 
-### axonClient.updateGuildConf(gID, guildSchema) ⇒ <code>Promise</code>
+### axonClient.updateGuildConf(gID, guildSchema) ⇒ <code>Promise.&lt;Object&gt;</code>
 Update guild Conf in cache + DB
 Uses Json Object directly. (Client cache leaned Guild schema)
 
 **Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
-**Returns**: <code>Promise</code> - Updated guildSchema  
+**Returns**: <code>Promise.&lt;Object&gt;</code> - Updated guildSchema  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -399,7 +402,7 @@ Register Guild Prefix
 External method that can be call to update cached prefix with prefix registered in th DB
 
 **Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
-**Returns**: <code>Promise.&lt;Object&gt;</code> - - The guild Schema from the DB / error if error  
+**Returns**: <code>Promise.&lt;Object&gt;</code> - The guild Schema from the DB / Error if error  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -408,82 +411,106 @@ External method that can be call to update cached prefix with prefix registered 
 
 <a name="AxonClient+updateBlacklistUser"></a>
 
-### axonClient.updateBlacklistUser(userID, boolean) ⇒ <code>Promise.&lt;Object&gt;</code>
+### axonClient.updateBlacklistUser(userID, [boolean]) ⇒ <code>Promise.&lt;Object&gt;</code>
 Add/Remove a blacklisted User
 External method that can be called to add a user to blacklist
 
 **Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
-**Returns**: <code>Promise.&lt;Object&gt;</code> - - The Axon Schema from the DB / error if error  
+**Returns**: <code>Promise.&lt;Object&gt;</code> - The Axon Schema from the DB / Error  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| userID | <code>String</code> | The id of the user to blacklist |
-| boolean | <code>Boolean</code> | if add(true) or remove(false) the user to blacklist |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| userID | <code>String</code> |  | The id of the user to blacklist |
+| [boolean] | <code>Boolean</code> | <code>true</code> | Whether to add(true) or remove(false) the user to blacklist |
 
 <a name="AxonClient+updateBlacklistGuild"></a>
 
-### axonClient.updateBlacklistGuild(guildID, boolean) ⇒ <code>Promise.&lt;Object&gt;</code>
+### axonClient.updateBlacklistGuild(guildID, [boolean]) ⇒ <code>Promise.&lt;Object&gt;</code>
 Add/Remove a blacklisted Guild
 External method that can be called to add a user to blacklist
 
 **Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
-**Returns**: <code>Promise.&lt;Object&gt;</code> - - The Axon Schema from the DB / error if error  
+**Returns**: <code>Promise.&lt;Object&gt;</code> - The Axon Schema from the DB / Error  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| guildID | <code>String</code> | The id of the guild to blacklist |
-| boolean | <code>Boolean</code> | if add(true) or remove(false) the guild to blacklist |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| guildID | <code>String</code> |  | The id of the guild to blacklist |
+| [boolean] | <code>Boolean</code> | <code>true</code> | if add(true) or remove(false) the guild to blacklist |
 
-<a name="AxonClient+updateStateModule"></a>
+<a name="AxonClient+updateGuildStateModule"></a>
 
-### axonClient.updateStateModule(guildID, label, boolean) ⇒ <code>Promise.&lt;Object&gt;</code>
+### axonClient.updateGuildStateModule(guildID, label, [boolean]) ⇒ <code>Promise.&lt;Object&gt;</code>
 Update state of a Module
 Checkers were done before calling updateStateModule
 the module exist/is not a serverBypass module
 boolean true = disable module / false = enable
 
 **Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
-**Returns**: <code>Promise.&lt;Object&gt;</code> - return updated guildSchema / error if error  
+**Returns**: <code>Promise.&lt;Object&gt;</code> - Updated guildSchema / Error  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| guildID | <code>String</code> | The guild ID |
-| label | <code>String</code> | The module label |
-| boolean | <code>Boolean</code> | If disable the module (false) or enable (true) |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| guildID | <code>String</code> |  | The guild ID |
+| label | <code>String</code> |  | The module label |
+| [boolean] | <code>Boolean</code> | <code>true</code> | If disable the module (false) or enable (true) |
 
-<a name="AxonClient+updateStateCommand"></a>
+<a name="AxonClient+updateGuildStateCommand"></a>
 
-### axonClient.updateStateCommand(guildID, label, boolean) ⇒ <code>Promise.&lt;Object&gt;</code>
+### axonClient.updateGuildStateCommand(guildID, label, [boolean]) ⇒ <code>Promise.&lt;Object&gt;</code>
 Update sate of a Command
 Checkers were done before calling updateStateCommand
 the command exist/is not a serverBypass command
 boolean true = disable command / false = enable
 
 **Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
-**Returns**: <code>Promise.&lt;Object&gt;</code> - return updated guildSchema / error if error  
+**Returns**: <code>Promise.&lt;Object&gt;</code> - Updated guildSchema / Error  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| guildID | <code>String</code> | The guild ID |
-| label | <code>String</code> | The command label |
-| boolean | <code>Boolean</code> | If disable the command (false) or enable (true) |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| guildID | <code>String</code> |  | The guild ID |
+| label | <code>String</code> |  | The command label |
+| [boolean] | <code>Boolean</code> | <code>true</code> | If disable the command (false) or enable (true) |
 
 <a name="AxonClient+updateStateEvent"></a>
 
-### axonClient.updateStateEvent(guildID, label, boolean) ⇒ <code>Promise.&lt;Object&gt;</code>
+### axonClient.updateStateEvent(guildID, label, [boolean]) ⇒ <code>Promise.&lt;Object&gt;</code>
 Update state of an Event
 Checkers were done before calling updateStateEvent
 the event exist/is not a serverBypass event
 boolean true = disable event / false = enable
 
 **Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
-**Returns**: <code>Promise.&lt;Object&gt;</code> - return updated guildSchema / error if error  
+**Returns**: <code>Promise.&lt;Object&gt;</code> - Updated guildSchema / Error  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| guildID | <code>String</code> | The guild ID |
-| label | <code>String</code> | The event label |
-| boolean | <code>Boolean</code> | If disable the event (false) or enable (true) |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| guildID | <code>String</code> |  | The guild ID |
+| label | <code>String</code> |  | The event label |
+| [boolean] | <code>Boolean</code> | <code>true</code> | If disable the event (false) or enable (true) |
+
+<a name="AxonClient+updateGlobalStateModule"></a>
+
+### axonClient.updateGlobalStateModule(module, [state])
+Enable/Disable a module globally
+
+**Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| module | <code>String</code> |  | Module name |
+| [state] | <code>Boolean</code> | <code>true</code> | Whether to enable or disable |
+
+<a name="AxonClient+updateGlobalStateCommand"></a>
+
+### axonClient.updateGlobalStateCommand(command, [state])
+Enable/Disable a command globally
+
+**Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| command | <code>String</code> |  | Command name |
+| [state] | <code>Boolean</code> | <code>true</code> | Whether to enable or disable |
 
 <a name="AxonClient.AxonClient"></a>
 
@@ -493,26 +520,31 @@ boolean true = disable event / false = enable
 
 | Name | Type | Description |
 | --- | --- | --- |
-| Logger | <code>Object</code> | Default Logger/Chalk Logger/Signale Logger |
-| DBprovider | <code>Object</code> | JSON(default)/Mongoose |
-| AxonUtil | <code>Object</code> | Util methods Axon |
-| Resolver | <code>Object</code> | Resolver |
-| Utils | <code>Object</code> | Utils methods general |
-| _configs | <code>Object</code> | configs (axon, template, _tokens) [GETTER: configs] |
+| client | <code>Object.&lt;Eris.Client&gt;</code> | Eris Client [GETER: _client] |
 | modules | <code>Collection.&lt;Module&gt;</code> | All modules in the client [key: label, value: module] |
 | commands | <code>Collection.&lt;Command&gt;</code> | All commands in the client [key: label, value: command] |
 | commandAliases | <code>Map.&lt;String&gt;</code> | All aliases in the client [key: alias, value: commandLabel] |
 | events | <code>Collection.&lt;EventF&gt;</code> | All events in the client [key: label, value: event] |
 | models | <code>Collection.&lt;Object&gt;</code> | All models in client (global models) [key: schemaLabel, value: schema] |
-| guildConfigs | <code>Collection.&lt;Object&gt;</code> | Guild configs [key: guildID, value: {guild config Object}] |
-| AxonClient | <code>Object</code> | Object with AxonClient specifications (versions, author). Define BASE for the bot |
-| blacklistedUsers | <code>Set.&lt;String&gt;</code> | Cached black listed users |
-| blacklistedGuilds | <code>Set.&lt;String&gt;</code> | Cached black listed guilds |
-| _client | <code>Object.&lt;Eris.Client&gt;</code> | Eris Client [GETER: client] |
+| guildConfigs | <code>Collection.&lt;Object&gt;</code> | Guild configs [key: guildID, value: { guildConfig }] |
+| Logger | <code>Object</code> | Default Logger / Chalk Logger / Signale Logger |
+| DBprovider | <code>Object</code> | JSON(default) / Mongoose |
+| AxonUtil | <code>Object</code> | Util methods (Axon) |
+| Resolver | <code>Object</code> | Resolver |
+| Utils | <code>Object</code> | Utils methods (general) |
+| configs | <code>Object</code> | configs (axon, template, _tokens) [GETTER: _configs] |
+| blacklistedUsers | <code>Set.&lt;String&gt;</code> | Cached blacklisted users |
+| blacklistedGuilds | <code>Set.&lt;String&gt;</code> | Cached blacklisted guilds |
 | staff | <code>Object</code> | Object of bot staff (user IDs) (owners, admins, ..+) |
-| params | <code>Object</code> | Bot params - debugMode (boolean)  : enable to show commands latency - prefix (Array)       : default bot prefix - ownerPrefix (string) : owner prefix - override perms/cd - adminPrefix (string) : admins prefix - override perms/cd |
-| infos | <code>Object</code> | Default infos about the bot: owners/name/links etc (misc) |
-| axonInfos | <code>Object</code> | Infos about Client (AxonClient) |
+| params | <code>Object</code> | Bot params |
+| params.debugMode | <code>Boolean</code> | enable to show commands latency |
+| params.prefix | <code>Array</code> | default bot prefix |
+| params.ownerPrefix | <code>String</code> | owner prefix : override perms/cd |
+| params.adminPrefix | <code>String</code> | admins prefix : override perms/cd |
+| infos | <code>Object</code> | General infos { name, description, version, library, owners } |
+| axonInfos | <code>Object</code> | AxonClient infos { name, version, author, github } |
+| webhooks | <code>Object</code> | All Client webhooks [GETTER: _configs._tokens.webhooks] |
+| template | <code>Object</code> | Template options [GETTER: _configs.template] |
 
 <a name="new_AxonClient.AxonClient_new"></a>
 

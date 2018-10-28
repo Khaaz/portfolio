@@ -1,16 +1,16 @@
 <a name="Resolver"></a>
 
-## Resolver
-**Kind**: global class  
+## .Resolver
+**Kind**: static class  
 **Author**: KhaaZ  
 
-* [Resolver](#Resolver)
+* [.Resolver](#Resolver)
     * [new Resolver()](#new_Resolver_new)
     * [.user(client, args)](#Resolver.user) ⇒ <code>Object</code> \| <code>null</code>
     * [.member(guild, args)](#Resolver.member) ⇒ <code>Object</code> \| <code>null</code>
     * [.role(guild, args)](#Resolver.role) ⇒ <code>Object</code> \| <code>null</code>
     * [.channel(guild, args)](#Resolver.channel) ⇒ <code>Object</code> \| <code>null</code>
-    * [.guild(args)](#Resolver.guild) ⇒ <code>Object</code> \| <code>null</code>
+    * [.guild(client, args)](#Resolver.guild) ⇒ <code>Object</code> \| <code>null</code>
 
 <a name="new_Resolver_new"></a>
 
@@ -71,7 +71,7 @@ Channel resolver
 
 <a name="Resolver.guild"></a>
 
-### Resolver.guild(args) ⇒ <code>Object</code> \| <code>null</code>
+### Resolver.guild(client, args) ⇒ <code>Object</code> \| <code>null</code>
 Guild resolver
 
 **Kind**: static method of [<code>Resolver</code>](#Resolver)  
@@ -79,5 +79,6 @@ Guild resolver
 
 | Param | Type | Description |
 | --- | --- | --- |
+| client | <code>Object.&lt;Eris.Client&gt;</code> | The bot client |
 | args | <code>Array</code> | Array with guild name/ID |
 

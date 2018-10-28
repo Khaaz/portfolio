@@ -128,7 +128,7 @@ Check if the attribute of the command are valid
 (valid names/ no missing etc)
 
 **Kind**: instance method of [<code>Module</code>](#Module)  
-**Returns**: <code>Boolean</code> - true if no problem / false if one invalid  
+**Returns**: <code>Boolean</code> - True if no problem / False if one invalid  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -140,7 +140,7 @@ Check if the attribute of the command are valid
 Check if the permissions names are valid
 
 **Kind**: instance method of [<code>Module</code>](#Module)  
-**Returns**: <code>Boolean</code> - true if yes / false if the name doesn't exist  
+**Returns**: <code>Boolean</code> - True if yes / False if the name doesn't exist  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -152,16 +152,21 @@ Check if the permissions names are valid
 **Kind**: static class of [<code>Module</code>](#Module)  
 **Properties**
 
-| Name | Type | Description |
-| --- | --- | --- |
-| _client | <code>Object.&lt;AxonClient&gt;</code> | Ease Client reference |
-| bot | <code>Object.&lt;AxonClient&gt;</code> | GETTER _client |
-| label | <code>String</code> | Module label (name/id) |
-| commands | <code>Collection.&lt;Command&gt;</code> | Commands in the modules [key: label, value: command Obj] |
-| events | <code>Collection.&lt;EventF&gt;</code> | Events in the modules [key: label, value: event Obj] |
-| enabled | <code>Boolean</code> | if the module is enabled | default: true (enabled) |
-| serverBypass | <code>Boolean</code> | if the module can't be server disabled | default: false (can be disabled) |
-| info | <code>Object</code> | Default infos about the module | name(string) / category(string) / description(string) / fullDesc(string |
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| axon | <code>Object.&lt;AxonClient&gt;</code> |  | Axon Client [GETTER: _axon] |
+| bot | <code>Object.&lt;Eris.Client&gt;</code> |  | Eris bot Client [GETTER: _axon.client] |
+| Logger | <code>Object</code> |  | Logger Object/Methods [GETTER: axon.Logger] |
+| Resolver | <code>Object</code> |  | Resolver Object/Methods [GETTER: axon.Resolver] |
+| AxonUtils | <code>Object</code> |  | AxonUtils Object/Methods [GETTER: axon.AxonUtils] |
+| Utils | <code>Object</code> |  | Utils Object/Methods [GETTER: axon.Utils] |
+| label | <code>String</code> |  | Module label (name/id) |
+| commands | <code>Collection.&lt;Command&gt;</code> |  | Collection of Commands in the modules [key: label, value: command Obj] |
+| events | <code>Collection.&lt;EventF&gt;</code> |  | Collection of Events in the modules [key: label, value: event Obj] |
+| events | <code>Collection.&lt;Object&gt;</code> |  | Collection of SChemas in the modules [key: label, value: schema Obj] |
+| [enabled] | <code>Boolean</code> | <code>true</code> | Module enabled |
+| [serverBypass] | <code>Boolean</code> | <code>false</code> | Module can't be server disabled |
+| info | <code>Object</code> |  | Default infos about the module - name(String) - category(String) - description(String) |
 
 <a name="new_Module.Module_new"></a>
 

@@ -6,16 +6,20 @@
 
 * [Utils](#Utils)
     * [new Utils()](#new_Utils_new)
-    * [.splitMessage(content)](#Utils+splitMessage) ⇒ <code>Array.&lt;String&gt;</code> \| <code>String</code>
-    * [.getPrefix(msg)](#Utils+getPrefix) ⇒ <code>String</code>
-    * [.getRoles(guild, member)](#Utils+getRoles) ⇒ <code>Array.&lt;Role&gt;</code>
-    * [.getHighestRole(guild, member)](#Utils+getHighestRole) ⇒ <code>Object.&lt;Role&gt;</code>
-    * [.sortRoles(array)](#Utils+sortRoles) ⇒ <code>Array.&lt;Role&gt;</code>
-    * [.isRoleHigher(role1, role2)](#Utils+isRoleHigher) ⇒ <code>Boolean</code>
-    * [.isHigherRole(guild, first, second)](#Utils+isHigherRole) ⇒ <code>Boolean</code>
-    * [.readJson()](#Utils+readJson)
-    * [.writeJson()](#Utils+writeJson)
-    * [.compareObject(obj1, obj2)](#Utils+compareObject) ⇒ <code>Boolean</code>
+    * _instance_
+        * [.splitMessage(content)](#Utils+splitMessage) ⇒ <code>Array.&lt;String&gt;</code> \| <code>String</code>
+        * [.getPrefix(msg)](#Utils+getPrefix) ⇒ <code>String</code>
+        * [.getRoles(guild, member)](#Utils+getRoles) ⇒ <code>Array.&lt;Role&gt;</code>
+        * [.getHighestRole(guild, member)](#Utils+getHighestRole) ⇒ <code>Object.&lt;Role&gt;</code>
+        * [.sortRoles(array)](#Utils+sortRoles) ⇒ <code>Array.&lt;Role&gt;</code>
+        * [.isRoleHigher(role1, role2)](#Utils+isRoleHigher) ⇒ <code>Boolean</code>
+        * [.isHigherRole(guild, first, second)](#Utils+isHigherRole) ⇒ <code>Boolean</code>
+        * [.readJson()](#Utils+readJson)
+        * [.writeJson()](#Utils+writeJson)
+        * [.compareObject(obj1, obj2)](#Utils+compareObject) ⇒ <code>Boolean</code>
+    * _static_
+        * [.Utils](#Utils.Utils)
+            * [new Utils()](#new_Utils.Utils_new)
 
 <a name="new_Utils_new"></a>
 
@@ -52,9 +56,10 @@ Returns the guild prefix of the given msg.
 <a name="Utils+getRoles"></a>
 
 ### utils.getRoles(guild, member) ⇒ <code>Array.&lt;Role&gt;</code>
-Get roles Object from a member
+Get an Array of roles Object from a member
 
 **Kind**: instance method of [<code>Utils</code>](#Utils)  
+**Returns**: <code>Array.&lt;Role&gt;</code> - Array of roles object  
 
 | Param | Type |
 | --- | --- |
@@ -67,6 +72,7 @@ Get roles Object from a member
 Get highest role from a member
 
 **Kind**: instance method of [<code>Utils</code>](#Utils)  
+**Returns**: <code>Object.&lt;Role&gt;</code> - Role Object  
 
 | Param | Type |
 | --- | --- |
@@ -79,7 +85,7 @@ Get highest role from a member
 Sort a users roles from higher role to last role
 
 **Kind**: instance method of [<code>Utils</code>](#Utils)  
-**Returns**: <code>Array.&lt;Role&gt;</code> - sorted array (per position) of roles  
+**Returns**: <code>Array.&lt;Role&gt;</code> - Sorted array (per position) of Role Object  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -126,13 +132,34 @@ write file
 
 ### utils.compareObject(obj1, obj2) ⇒ <code>Boolean</code>
 Ensures that all property names of obj1 exists in obj2.
-Doesn't compare values. Exept if it is an object, then it check for property names again
+Doesn't compare values. Exept if it is an object, then it check for property names recursively
 
 **Kind**: instance method of [<code>Utils</code>](#Utils)  
-**Returns**: <code>Boolean</code> - true: obj2 has at least all prop of obj1  
+**Returns**: <code>Boolean</code> - True: obj2 has at least all prop of obj1  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| obj1 | <code>Object</code> | Default config |
-| obj2 | <code>Object</code> | Custom config (Config to compare with) |
+| obj1 | <code>Object</code> | Default config/object |
+| obj2 | <code>Object</code> | Custom config/Object (Config/Object to compare with) |
+
+<a name="Utils.Utils"></a>
+
+### Utils.Utils
+**Kind**: static class of [<code>Utils</code>](#Utils)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| axon | <code>Object.&lt;AxonClient&gt;</code> | Axon Client [GETTER: _axon] |
+| bot | <code>Object.&lt;Eris.Client&gt;</code> | Eris bot Client [GETTER: _axon.client] |
+| userMention | <code>RegExp</code> | Regular Expression to match a userMention |
+| roleMention | <code>RegExp</code> | Regular Expression to match a roleMention |
+| channelMention | <code>RegExp</code> | Regular Expression to match a channelMention |
+| id | <code>RegExp</code> | Regular Expression to match an id |
+| hexCode | <code>RegExp</code> | Regular Expression to match an hexCode |
+
+<a name="new_Utils.Utils_new"></a>
+
+#### new Utils()
+Creates an instance of Utils.
 
