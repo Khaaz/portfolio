@@ -402,14 +402,14 @@ timeout // delay and auto delete message
 | _cooldown | <code>Object</code> |  | Map of current cooldown (global per user) [key: userID, value: Date.now()] |
 | label | <code>String</code> |  | Command label (name/id) |
 | aliases | <code>Array.&lt;String&gt;</code> |  | Array of commands aliases (including the command label) |
-| [enabled] | <code>Boolean</code> | <code>true</code> | Command enabled |
+| [enabled] | <code>Boolean</code> | <code>module.enabled</code> | Command enabled |
 | [isSubcmd] | <code>Boolean</code> | <code>false</code> | Command is a subcommand |
 | [parentCommand] | [<code>Object.&lt;Command&gt;</code>](#Command) | <code>NULL</code> | References to the parent Command (if isSubcmd = true) |
 | [hasSubcmd] | <code>Boolean</code> | <code>false</code> | Command has a subcommand |
+| [serverBypass] | <code>Boolean</code> | <code>module.serverBypass</code> | Command can't be server disabled |
 | subcmds | <code>Array</code> |  | Array of subcommands Object (deleted after init) |
 | [subCommands] | [<code>Collection.&lt;Command&gt;</code>](#Command) | <code>NULL</code> | Collection of subcommands |
 | [subCommandsAliases] | <code>Object.&lt;Map&gt;</code> | <code>NULL</code> | Map of subcommands aliases |
-| [serverBypass] | <code>Boolean</code> | <code>false</code> | Command can't be server disabled |
 | infos | <code>Object</code> |  | Default infos about the command |
 | infos.owner | <code>Owner</code> |  | Command owners/authors |
 | infos.cmdName | <code>String</code> |  | Command name (full) |
@@ -422,7 +422,7 @@ timeout // delay and auto delete message
 | [options.invalidPermissionMessage] | <code>Boolean</code> | <code>false</code> | Whether to trigger error message on invalid permission |
 | [options.deleteCommand] | <code>Boolean</code> | <code>false</code> | Whether to delete the command input |
 | [options.guildOnly] | <code>Boolean</code> | <code>true</code> | Whether the command is usable only in guilds |
-| [options.hidden] | <code>Boolean</code> | <code>false</code> | Whether the command is totally hidden from help commmand |
+| [options.hidden] | <code>Boolean</code> | <code>false</code> | Whether the command is hidden from help commmand () |
 | [options.cooldown] | <code>Number</code> | <code>3000</code> | Cooldown for the command |
 | permissions | <code>Object</code> |  | Default permissions for the bot/users |
 | [permissions.bot] | <code>Array</code> | <code>[]</code> | Array or permissions needed by the bot to execute the command |

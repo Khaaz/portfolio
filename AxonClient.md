@@ -9,11 +9,11 @@
     * [new AxonClient()](#new_AxonClient_new)
     * _instance_
         * [.Logger](#AxonClient+Logger)
-        * [.Schemas](#AxonClient+Schemas)
+        * [.schemas](#AxonClient+schemas)
+        * [.DBprovider](#AxonClient+DBprovider)
         * [.AxonUtils](#AxonClient+AxonUtils)
         * [._tempModules](#AxonClient+_tempModules)
         * [.commands](#AxonClient+commands)
-        * [.models](#AxonClient+models)
         * [.guildConfigs](#AxonClient+guildConfigs)
         * [.blacklistedUsers](#AxonClient+blacklistedUsers)
         * [._client](#AxonClient+_client)
@@ -25,6 +25,7 @@
         * [.initListener()](#AxonClient+initListener)
         * [.initAllModules(modules)](#AxonClient+initAllModules)
         * [.registerModule(module)](#AxonClient+registerModule)
+        * [.unregisterModule(label)](#AxonClient+unregisterModule)
         * [.initAxon()](#AxonClient+initAxon)
         * [.initStatus()](#AxonClient+initStatus)
         * [.onMessageCreate(msg)](#AxonClient+onMessageCreate)
@@ -34,8 +35,8 @@
         * [._execHelp(msg, args, guildConf)](#AxonClient+_execHelp)
         * [.sendFullHelp(msg)](#AxonClient+sendFullHelp) ⇒ <code>Promise.&lt;Message&gt;</code>
         * [._isGuildIgnored(msg, guildConf)](#AxonClient+_isGuildIgnored) ⇒ <code>Boolean</code>
-        * [._isCommandDisabled(command, guildConf)](#AxonClient+_isCommandDisabled) ⇒ <code>Boolean</code>
         * [._isModuleDisabled(command, guildConf)](#AxonClient+_isModuleDisabled) ⇒ <code>Boolean</code>
+        * [._isCommandDisabled(command, guildConf)](#AxonClient+_isCommandDisabled) ⇒ <code>Boolean</code>
         * [.fetchAxonConf()](#AxonClient+fetchAxonConf) ⇒ <code>Promise.&lt;Object&gt;</code>
         * [.fetchGuildConf(gID)](#AxonClient+fetchGuildConf) ⇒ <code>Promise.&lt;Object&gt;</code>
         * [.resolvePrefix(msg)](#AxonClient+resolvePrefix) ⇒ <code>String</code>
@@ -65,9 +66,15 @@ AxonCore - Client constructor
 Logger
 
 **Kind**: instance property of [<code>AxonClient</code>](#AxonClient)  
-<a name="AxonClient+Schemas"></a>
+<a name="AxonClient+schemas"></a>
 
-### axonClient.Schemas
+### axonClient.schemas
+DataModels
+
+**Kind**: instance property of [<code>AxonClient</code>](#AxonClient)  
+<a name="AxonClient+DBprovider"></a>
+
+### axonClient.DBprovider
 DB
 
 **Kind**: instance property of [<code>AxonClient</code>](#AxonClient)  
@@ -87,12 +94,6 @@ Modules
 
 ### axonClient.commands
 Commands, Events
-
-**Kind**: instance property of [<code>AxonClient</code>](#AxonClient)  
-<a name="AxonClient+models"></a>
-
-### axonClient.models
-DataModels
 
 **Kind**: instance property of [<code>AxonClient</code>](#AxonClient)  
 <a name="AxonClient+guildConfigs"></a>
@@ -142,7 +143,8 @@ AxonClient class is already created
 <a name="AxonClient+onReady"></a>
 
 ### axonClient.onReady()
-Call Init Method on Ready event
+Call Init Method on Ready event.
+Bind All Handlers to the event emission.
 
 **Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
 <a name="AxonClient+initListener"></a>
@@ -174,6 +176,18 @@ Init module in the client + commands + aliases
 | Param | Type |
 | --- | --- |
 | module | <code>Object.&lt;Module&gt;</code> | 
+
+<a name="AxonClient+unregisterModule"></a>
+
+### axonClient.unregisterModule(label)
+Unregister a Module
+Remove the module of the client + commands + aliases + schemas
+
+**Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| label | <code>String</code> | Label of the module to unregister |
 
 <a name="AxonClient+initAxon"></a>
 
@@ -293,10 +307,10 @@ Check if the user/role/channel is guild ignored
 | msg | <code>Object.&lt;Message&gt;</code> | 
 | guildConf | <code>Object</code> | 
 
-<a name="AxonClient+_isCommandDisabled"></a>
+<a name="AxonClient+_isModuleDisabled"></a>
 
-### axonClient.\_isCommandDisabled(command, guildConf) ⇒ <code>Boolean</code>
-Check if the command is server disabled
+### axonClient.\_isModuleDisabled(command, guildConf) ⇒ <code>Boolean</code>
+Check if the module is server disabled
 
 **Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
 **Returns**: <code>Boolean</code> - True if disabled / Undefined if not  
@@ -306,10 +320,10 @@ Check if the command is server disabled
 | command | <code>Object.&lt;Command&gt;</code> | The command object |
 | guildConf | <code>Object</code> | The guild Config object |
 
-<a name="AxonClient+_isModuleDisabled"></a>
+<a name="AxonClient+_isCommandDisabled"></a>
 
-### axonClient.\_isModuleDisabled(command, guildConf) ⇒ <code>Boolean</code>
-Check if the module is server disabled
+### axonClient.\_isCommandDisabled(command, guildConf) ⇒ <code>Boolean</code>
+Check if the command is server disabled
 
 **Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
 **Returns**: <code>Boolean</code> - True if disabled / Undefined if not  
@@ -357,7 +371,7 @@ Else it return undefined (no guild prefix used)
 <a name="AxonClient+resolveCommand"></a>
 
 ### axonClient.resolveCommand(label, args, guildConf) ⇒ <code>Object</code>
-Resolve the command Object
+Resolve the command Object. Only resolve the command if it's not globally disabled/guild disabled
 
 **Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
 **Returns**: <code>Object</code> - The command object / Undefined if the command doesn't exist  
@@ -524,8 +538,8 @@ Enable/Disable a command globally
 | modules | <code>Collection.&lt;Module&gt;</code> | All modules in the client [key: label, value: module] |
 | commands | <code>Collection.&lt;Command&gt;</code> | All commands in the client [key: label, value: command] |
 | commandAliases | <code>Map.&lt;String&gt;</code> | All aliases in the client [key: alias, value: commandLabel] |
-| events | <code>Collection.&lt;EventF&gt;</code> | All events in the client [key: label, value: event] |
-| models | <code>Collection.&lt;Object&gt;</code> | All models in client (global models) [key: schemaLabel, value: schema] |
+| events | <code>Collection.&lt;Event&gt;</code> | All events in the client [key: label, value: event] |
+| schemas | <code>Collection.&lt;Object&gt;</code> | All schemas in client (global models) [key: schemaLabel, value: schema] |
 | guildConfigs | <code>Collection.&lt;Object&gt;</code> | Guild configs [key: guildID, value: { guildConfig }] |
 | Logger | <code>Object</code> | Default Logger / Chalk Logger / Signale Logger |
 | DBprovider | <code>Object</code> | JSON(default) / Mongoose |
@@ -537,10 +551,10 @@ Enable/Disable a command globally
 | blacklistedGuilds | <code>Set.&lt;String&gt;</code> | Cached blacklisted guilds |
 | staff | <code>Object</code> | Object of bot staff (user IDs) (owners, admins, ..+) |
 | params | <code>Object</code> | Bot params |
-| params.debugMode | <code>Boolean</code> | enable to show commands latency |
-| params.prefix | <code>Array</code> | default bot prefix |
-| params.ownerPrefix | <code>String</code> | owner prefix : override perms/cd |
-| params.adminPrefix | <code>String</code> | admins prefix : override perms/cd |
+| params.debugMode | <code>Boolean</code> | Enable to show commands latency |
+| params.prefix | <code>Array</code> | Default bot prefix |
+| params.ownerPrefix | <code>String</code> | Owner prefix : override perms/cd |
+| params.adminPrefix | <code>String</code> | Admins prefix : override perms/cd except Owner |
 | infos | <code>Object</code> | General infos { name, description, version, library, owners } |
 | axonInfos | <code>Object</code> | AxonClient infos { name, version, author, github } |
 | webhooks | <code>Object</code> | All Client webhooks [GETTER: _configs._tokens.webhooks] |

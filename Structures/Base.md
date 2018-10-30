@@ -7,6 +7,8 @@
 * [Base](#Base)
     * [new Base()](#new_Base_new)
     * _instance_
+        * [.getModule(module)](#Base+getModule) ⇒ <code>Object.&lt;Module&gt;</code> \| <code>NULL</code>
+        * [.getCommand(fullLabel)](#Base+getCommand) ⇒ <code>Object.&lt;Command&gt;</code> \| <code>NULL</code>
         * [.sendDM(user, content, options)](#Base+sendDM) ⇒ <code>Promise.&lt;?Message&gt;</code>
         * [.sendMessage(channel, content, [options])](#Base+sendMessage) ⇒ <code>Promise.&lt;?Message&gt;</code>
         * [.editMessage(message, content)](#Base+editMessage) ⇒ <code>Promise.&lt;?Message&gt;</code>
@@ -27,6 +29,28 @@ toJson
 inspect
 
 Based of Eris.Base
+
+<a name="Base+getModule"></a>
+
+### base.getModule(module) ⇒ <code>Object.&lt;Module&gt;</code> \| <code>NULL</code>
+Get a module from AxonClient with the label
+
+**Kind**: instance method of [<code>Base</code>](#Base)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| module | <code>String</code> | Module label |
+
+<a name="Base+getCommand"></a>
+
+### base.getCommand(fullLabel) ⇒ <code>Object.&lt;Command&gt;</code> \| <code>NULL</code>
+Get a command/subcommand from AxonClient with the full label
+
+**Kind**: instance method of [<code>Base</code>](#Base)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| fullLabel | <code>String</code> | Full command (or subcommand) label |
 
 <a name="Base+sendDM"></a>
 

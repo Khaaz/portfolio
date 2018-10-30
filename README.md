@@ -1,2 +1,3 @@
-# Documentation
-Documentation repository for everything
+# Headline
+
+> An awesome project.

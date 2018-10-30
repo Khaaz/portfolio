@@ -23,12 +23,12 @@ Resolver class for AxonClient
 User resolver
 
 **Kind**: static method of [<code>Resolver</code>](#Resolver)  
-**Returns**: <code>Object</code> \| <code>null</code> - The user object / null if not found / error if error (incorect args)  
+**Returns**: <code>Object</code> \| <code>null</code> - The user object / Null if not found / Error  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | client | <code>Object.&lt;Eris.Client&gt;</code> | The bot client |
-| args | <code>Array</code> \| <code>String</code> | Array of arguments resolved by the command. |
+| args | <code>Array/String</code> | Array of arguments resolved by the command. |
 
 <a name="Resolver.member"></a>
 
@@ -36,12 +36,12 @@ User resolver
 Member resolver
 
 **Kind**: static method of [<code>Resolver</code>](#Resolver)  
-**Returns**: <code>Object</code> \| <code>null</code> - The member object / null if not found / error if error (incorect args)  
+**Returns**: <code>Object</code> \| <code>null</code> - The member object / Null if not found / Error  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | guild | <code>Object.&lt;Guild&gt;</code> | Object Guild resolved by the command. |
-| args | <code>Array</code> \| <code>String</code> | Array of arguments resolved by the command. |
+| args | <code>Array/String</code> | Array of arguments resolved by the command. |
 
 <a name="Resolver.role"></a>
 
@@ -49,12 +49,12 @@ Member resolver
 Role resolver
 
 **Kind**: static method of [<code>Resolver</code>](#Resolver)  
-**Returns**: <code>Object</code> \| <code>null</code> - The role object / null if not found / error if error (incorect args)  
+**Returns**: <code>Object</code> \| <code>null</code> - The role object / Null if not found / Error  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | guild | <code>Object.&lt;Guild&gt;</code> | Object Guild resolved by the command. |
-| args | <code>Array</code> \| <code>String</code> | Array of arguments resolved by the command. |
+| args | <code>Array/String</code> | Array of arguments resolved by the command. |
 
 <a name="Resolver.channel"></a>
 
@@ -62,12 +62,12 @@ Role resolver
 Channel resolver
 
 **Kind**: static method of [<code>Resolver</code>](#Resolver)  
-**Returns**: <code>Object</code> \| <code>null</code> - The channel object / null if not found / error if error (incorect args)  
+**Returns**: <code>Object</code> \| <code>null</code> - The channel object / Null if not found / Error  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | guild | <code>Object.&lt;Guild&gt;</code> | Object Guild resolved by the command. |
-| args | <code>Array</code> \| <code>String</code> | Array of arguments resolved by the command. |
+| args | <code>Array/String</code> | Array of arguments resolved by the command. |
 
 <a name="Resolver.guild"></a>
 
@@ -75,7 +75,7 @@ Channel resolver
 Guild resolver
 
 **Kind**: static method of [<code>Resolver</code>](#Resolver)  
-**Returns**: <code>Object</code> \| <code>null</code> - The guild object / null if not found / error if error (incorrect args)  
+**Returns**: <code>Object</code> \| <code>null</code> - The guild object / Null if not found / Error  
 
 | Param | Type | Description |
 | --- | --- | --- |

@@ -19,6 +19,7 @@
     * [.initModule(module)](#ChalkLogger+initModule)
     * [.initCommand(command)](#ChalkLogger+initCommand)
     * [.initSubCmd(sub)](#ChalkLogger+initSubCmd)
+    * [.initEvent(sub)](#ChalkLogger+initEvent)
 
 <a name="new_ChalkLogger_new"></a>
 
@@ -161,6 +162,17 @@ Initialisation - Command infos
 <a name="ChalkLogger+initSubCmd"></a>
 
 ### chalkLogger.initSubCmd(sub)
+Initialisation - SubCommand infos
+
+**Kind**: instance method of [<code>ChalkLogger</code>](#ChalkLogger)  
+
+| Param | Type |
+| --- | --- |
+| sub | <code>Command</code> | 
+
+<a name="ChalkLogger+initEvent"></a>
+
+### chalkLogger.initEvent(sub)
 Initialisation - SubCommand infos
 
 **Kind**: instance method of [<code>ChalkLogger</code>](#ChalkLogger)  

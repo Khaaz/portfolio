@@ -19,6 +19,7 @@
     * [.initModule(module)](#DefLogger+initModule)
     * [.initCommand(command)](#DefLogger+initCommand)
     * [.initSubCmd(sub)](#DefLogger+initSubCmd)
+    * [.initEvent(sub)](#DefLogger+initEvent)
 
 <a name="new_DefLogger_new"></a>
 
@@ -160,6 +161,17 @@ Initialisation - Command infos
 <a name="DefLogger+initSubCmd"></a>
 
 ### defLogger.initSubCmd(sub)
+Initialisation - SubCommand infos
+
+**Kind**: instance method of [<code>DefLogger</code>](#DefLogger)  
+
+| Param | Type |
+| --- | --- |
+| sub | <code>Command</code> | 
+
+<a name="DefLogger+initEvent"></a>
+
+### defLogger.initEvent(sub)
 Initialisation - SubCommand infos
 
 **Kind**: instance method of [<code>DefLogger</code>](#DefLogger)  
