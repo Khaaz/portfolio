@@ -1,4 +1,4 @@
-<!-- _navbar.md -->
+<!--_navbar.md -->
 
 
 * **[Setup](Setup.md)**
@@ -30,4 +30,3 @@
 * **[About](About.md)**
   * [EASE](https://github.com/AxonTeam/Ease)
   * [WebSpell](https://github.com/Khaazz/webSPELL)
-
