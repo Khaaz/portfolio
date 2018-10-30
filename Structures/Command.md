@@ -6,34 +6,11 @@
 **Author**: KhaaZ  
 
 * [Command](#Command) ⇐ <code>Base</code>
-    * [new Command()](#new_Command_new)
     * _instance_
-        * [._module](#Command+_module)
-        * [._cooldown](#Command+_cooldown)
-        * [.label](#Command+label)
-        * [.isSubcmd](#Command+isSubcmd)
-        * [.subCommands](#Command+subCommands)
-        * [.serverBypass](#Command+serverBypass)
-        * [.infos](#Command+infos)
         * [.options](#Command+options)
         * [.permissions](#Command+permissions)
-        * [._execute(message)](#Command+_execute) ⇒ <code>Promise</code>
-        * [._executeAdmin(message)](#Command+_executeAdmin) ⇒ <code>Promise</code>
-        * [._executeDM(message)](#Command+_executeDM) ⇒ <code>Promise</code>
         * [.sendHelp({msg,)](#Command+sendHelp) ⇒ <code>Promise.&lt;Message&gt;</code>
-        * [._shouldCooldown(msg)](#Command+_shouldCooldown) ⇒ <code>Boolean</code> \| <code>Number</code>
         * [.canExecute(msg, guildConf)](#Command+canExecute) ⇒ <code>Boolean</code>
-        * [._checkPermsBot(channel)](#Command+_checkPermsBot) ⇒ <code>Boolean</code>
-        * [._checkPermsUserBypass(member)](#Command+_checkPermsUserBypass) ⇒ <code>Boolean</code>
-        * [._checkPermsUserNeeded(member)](#Command+_checkPermsUserNeeded) ⇒ <code>Boolean</code>
-        * [._checkUserBypass(member)](#Command+_checkUserBypass) ⇒ <code>Boolean</code>
-        * [._checkUserNeeded(member)](#Command+_checkUserNeeded) ⇒ <code>Boolean</code>
-        * [._checkRoleBypass(member)](#Command+_checkRoleBypass) ⇒ <code>Boolean</code>
-        * [._checkRoleNeeded(member)](#Command+_checkRoleNeeded) ⇒ <code>Boolean</code>
-        * [._checkChannelBypass(channel)](#Command+_checkChannelBypass) ⇒ <code>Boolean</code>
-        * [._checkChannelNeeded(channel)](#Command+_checkChannelNeeded) ⇒ <code>Boolean</code>
-        * [._checkStaffBypass(member)](#Command+_checkStaffBypass) ⇒ <code>Boolean</code>
-        * [._checkStaffNeeded(member)](#Command+_checkStaffNeeded) ⇒ <code>Boolean</code>
         * [.sendBotPerms(channel, [permissions])](#Command+sendBotPerms) ⇒ <code>Promise.&lt;?Message&gt;</code>
         * [.sendUserPerms(channel, member, [permission])](#Command+sendUserPerms) ⇒ <code>Promise.&lt;?Message&gt;</code>
         * [.sendDestPerms(channel)](#Command+sendDestPerms) ⇒ <code>Promise.&lt;?Message&gt;</code>
@@ -42,58 +19,6 @@
         * [.Command](#Command.Command)
             * [new Command(module)](#new_Command.Command_new)
 
-<a name="new_Command_new"></a>
-
-### new Command()
-AxonCore - Command contructor
-
-<a name="Command+_module"></a>
-
-### command.\_module
-[GETTER] - bot references to Axon Client
-[GETTER] - (private) module references to the module the command is in
-
-**Kind**: instance property of [<code>Command</code>](#Command)  
-<a name="Command+_cooldown"></a>
-
-### command.\_cooldown
-Handle Cooldown
-User ID => Cooldown
-
-**Kind**: instance property of [<code>Command</code>](#Command)  
-<a name="Command+label"></a>
-
-### command.label
-ShortCut - Reusable class
-Resolver [GETTER] / Util [GETTER] / Template [GETTER]
-
-**Kind**: instance property of [<code>Command</code>](#Command)  
-<a name="Command+isSubcmd"></a>
-
-### command.isSubcmd
-Subcommands related
-Default values
-
-**Kind**: instance property of [<code>Command</code>](#Command)  
-<a name="Command+subCommands"></a>
-
-### command.subCommands
-Initiated if subcommands
-
-**Kind**: instance property of [<code>Command</code>](#Command)  
-<a name="Command+serverBypass"></a>
-
-### command.serverBypass
-Bypass all perms - true = prevent the command to be server disabled
-
-**Kind**: instance property of [<code>Command</code>](#Command)  
-<a name="Command+infos"></a>
-
-### command.infos
-Infos - Help commands
-All fields are required
-
-**Kind**: instance property of [<code>Command</code>](#Command)  
 <a name="Command+options"></a>
 
 ### command.options
@@ -121,39 +46,6 @@ needed => needed to have all <NEEDED> permissions to execute the command
 bypass => needed to have one <BYPASS> permissions to execute the command (override needed as well)
 
 **Kind**: instance property of [<code>Command</code>](#Command)  
-<a name="Command+_execute"></a>
-
-### command.\_execute(message) ⇒ <code>Promise</code>
-Execute command - checks perms according to comand options
-
-**Kind**: instance method of [<code>Command</code>](#Command)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| message | <code>Object</code> | { msg, args, guildConf } |
-
-<a name="Command+_executeAdmin"></a>
-
-### command.\_executeAdmin(message) ⇒ <code>Promise</code>
-Execute the command with admin checkers (minimal)
-no CD - no perms checkers
-
-**Kind**: instance method of [<code>Command</code>](#Command)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| message | <code>Object</code> | { msg, args, guildConf } |
-
-<a name="Command+_executeDM"></a>
-
-### command.\_executeDM(message) ⇒ <code>Promise</code>
-Execute the command in DM - pass some checkers
-
-**Kind**: instance method of [<code>Command</code>](#Command)  
-
-| Param | Type |
-| --- | --- |
-| message | <code>Object.&lt;Message&gt;</code> | 
 
 <a name="Command+sendHelp"></a>
 
@@ -168,18 +60,6 @@ Call custom sendHelp (Client method if it exist instead of default one)
 | Param | Type | Description |
 | --- | --- | --- |
 | {msg, | <code>Object.&lt;Message&gt;</code> | guildconf} - The message object |
-
-<a name="Command+_shouldCooldown"></a>
-
-### command.\_shouldCooldown(msg) ⇒ <code>Boolean</code> \| <code>Number</code>
-Check command cooldown for the user
-
-**Kind**: instance method of [<code>Command</code>](#Command)  
-**Returns**: <code>Boolean</code> \| <code>Number</code> - False if no cooldown / Cooldown time left if there is a cooldown  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| msg | <code>Object.&lt;Message&gt;</code> | The Message object |
 
 <a name="Command+canExecute"></a>
 
@@ -196,138 +76,6 @@ ServerMod
 | --- | --- | --- |
 | msg | <code>Object.&lt;Message&gt;</code> | The Message Object |
 | guildConf | <code>Object</code> | GuildConfig |
-
-<a name="Command+_checkPermsBot"></a>
-
-### command.\_checkPermsBot(channel) ⇒ <code>Boolean</code>
-Check bot permission
-(= permssions in config)
-
-**Kind**: instance method of [<code>Command</code>](#Command)  
-
-| Param | Type |
-| --- | --- |
-| channel | <code>Object.&lt;Channel&gt;</code> | 
-
-<a name="Command+_checkPermsUserBypass"></a>
-
-### command.\_checkPermsUserBypass(member) ⇒ <code>Boolean</code>
-Check user permssions [bypass]
-(= permssions in config)
-
-**Kind**: instance method of [<code>Command</code>](#Command)  
-
-| Param | Type |
-| --- | --- |
-| member | <code>Object.&lt;Member&gt;</code> | 
-
-<a name="Command+_checkPermsUserNeeded"></a>
-
-### command.\_checkPermsUserNeeded(member) ⇒ <code>Boolean</code>
-Check user permissions [needed]
-(= permssions in config)
-
-**Kind**: instance method of [<code>Command</code>](#Command)  
-
-| Param | Type |
-| --- | --- |
-| member | <code>Object.&lt;Member&gt;</code> | 
-
-<a name="Command+_checkUserBypass"></a>
-
-### command.\_checkUserBypass(member) ⇒ <code>Boolean</code>
-Check roles IDs [bypass]
-(= permssions in config)
-
-**Kind**: instance method of [<code>Command</code>](#Command)  
-
-| Param | Type |
-| --- | --- |
-| member | <code>Object.&lt;Member&gt;</code> | 
-
-<a name="Command+_checkUserNeeded"></a>
-
-### command.\_checkUserNeeded(member) ⇒ <code>Boolean</code>
-Check user IDs [needed]
-(= permssions in config)
-
-**Kind**: instance method of [<code>Command</code>](#Command)  
-
-| Param | Type |
-| --- | --- |
-| member | <code>Object.&lt;Member&gt;</code> | 
-
-<a name="Command+_checkRoleBypass"></a>
-
-### command.\_checkRoleBypass(member) ⇒ <code>Boolean</code>
-Check roles IDs [bypass]
-(= permssions in config)
-
-**Kind**: instance method of [<code>Command</code>](#Command)  
-
-| Param | Type |
-| --- | --- |
-| member | <code>Object.&lt;Member&gt;</code> | 
-
-<a name="Command+_checkRoleNeeded"></a>
-
-### command.\_checkRoleNeeded(member) ⇒ <code>Boolean</code>
-Check roles IDs [needed]
-(= permssions in config)
-
-**Kind**: instance method of [<code>Command</code>](#Command)  
-
-| Param | Type |
-| --- | --- |
-| member | <code>Object.&lt;Member&gt;</code> | 
-
-<a name="Command+_checkChannelBypass"></a>
-
-### command.\_checkChannelBypass(channel) ⇒ <code>Boolean</code>
-Check channels IDs [bypass]
-(= permssions in config)
-
-**Kind**: instance method of [<code>Command</code>](#Command)  
-
-| Param | Type |
-| --- | --- |
-| channel | <code>Object.&lt;Channel&gt;</code> | 
-
-<a name="Command+_checkChannelNeeded"></a>
-
-### command.\_checkChannelNeeded(channel) ⇒ <code>Boolean</code>
-Check channels IDs [needed]
-(= permssions in config)
-
-**Kind**: instance method of [<code>Command</code>](#Command)  
-
-| Param | Type |
-| --- | --- |
-| channel | <code>Object.&lt;Channel&gt;</code> | 
-
-<a name="Command+_checkStaffBypass"></a>
-
-### command.\_checkStaffBypass(member) ⇒ <code>Boolean</code>
-Check if the user is Bot staff
-
-**Kind**: instance method of [<code>Command</code>](#Command)  
-**Returns**: <code>Boolean</code> - True if Staff / False if not  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| member | <code>Object.&lt;Member&gt;</code> | The Member Object |
-
-<a name="Command+_checkStaffNeeded"></a>
-
-### command.\_checkStaffNeeded(member) ⇒ <code>Boolean</code>
-Check if the user is Bot staff
-
-**Kind**: instance method of [<code>Command</code>](#Command)  
-**Returns**: <code>Boolean</code> - True if Staff / False if not  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| member | <code>Object.&lt;Member&gt;</code> | The Member Object |
 
 <a name="Command+sendBotPerms"></a>
 

@@ -6,40 +6,10 @@
 **Author**: KhaaZ  
 
 * [Event](#Event) ⇐ <code>Base</code>
-    * [new Event()](#new_Event_new)
-    * _instance_
-        * [.eventName](#Event+eventName)
-        * [.label](#Event+label)
-        * [.serverBypass](#Event+serverBypass)
     * _static_
         * [.Event](#Event.Event)
             * [new Event(module)](#new_Event.Event_new)
 
-<a name="new_Event_new"></a>
-
-### new Event()
-Default Event class
-
-Extends Event to create an event
-
-<a name="Event+eventName"></a>
-
-### event.eventName
-Event Name (Discord name)
-
-**Kind**: instance property of [<code>Event</code>](#Event)  
-<a name="Event+label"></a>
-
-### event.label
-Event name (Function name)
-
-**Kind**: instance property of [<code>Event</code>](#Event)  
-<a name="Event+serverBypass"></a>
-
-### event.serverBypass
-Bypass all perms - can/can't be server disabled
-
-**Kind**: instance property of [<code>Event</code>](#Event)  
 <a name="Event.Event"></a>
 
 ### Event.Event

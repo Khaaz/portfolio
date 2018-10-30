@@ -6,11 +6,7 @@
 **Author**: KhaaZ  
 
 * [Module](#Module) ⇐ <code>Base</code>
-    * [new Module()](#new_Module_new)
     * _instance_
-        * [.commands](#Module+commands)
-        * [.enabled](#Module+enabled)
-        * [.infos](#Module+infos)
         * [.init(commands, events, events)](#Module+init)
         * [.initAllCommands(commands)](#Module+initAllCommands)
         * [.initAllEvents(events)](#Module+initAllEvents)
@@ -23,33 +19,7 @@
     * _static_
         * [.Module](#Module.Module)
             * [new Module(client)](#new_Module.Module_new)
-
-<a name="new_Module_new"></a>
-
-### new Module()
-AxonCore - Module constructor
-Register a Module with an Object of Commands, an Object of Events, an Object of Schemas
-Register/unregister
-
-<a name="Module+commands"></a>
-
-### module.commands
-Containments - all commands and events within this module
-
-**Kind**: instance property of [<code>Module</code>](#Module)  
-<a name="Module+enabled"></a>
-
-### module.enabled
-Default option and params
-
-**Kind**: instance property of [<code>Module</code>](#Module)  
-<a name="Module+infos"></a>
-
-### module.infos
-Infos - help command
-All fields are required
-
-**Kind**: instance property of [<code>Module</code>](#Module)  
+  
 <a name="Module+init"></a>
 
 ### module.init(commands, events, events)

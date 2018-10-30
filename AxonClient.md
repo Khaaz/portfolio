@@ -6,37 +6,13 @@
 **Author**: KhaaZ  
 
 * [AxonClient](#AxonClient) ⇐ <code>EventEmitter</code>
-    * [new AxonClient()](#new_AxonClient_new)
     * _instance_
-        * [.Logger](#AxonClient+Logger)
-        * [.schemas](#AxonClient+schemas)
-        * [.DBprovider](#AxonClient+DBprovider)
-        * [.AxonUtils](#AxonClient+AxonUtils)
-        * [._tempModules](#AxonClient+_tempModules)
-        * [.commands](#AxonClient+commands)
-        * [.guildConfigs](#AxonClient+guildConfigs)
-        * [.blacklistedUsers](#AxonClient+blacklistedUsers)
-        * [._client](#AxonClient+_client)
-        * [.params](#AxonClient+params)
-        * [.infos](#AxonClient+infos)
-        * [.axonInfos](#AxonClient+axonInfos)
         * [.start()](#AxonClient+start)
         * [.onReady()](#AxonClient+onReady)
-        * [.initListener()](#AxonClient+initListener)
-        * [.initAllModules(modules)](#AxonClient+initAllModules)
         * [.registerModule(module)](#AxonClient+registerModule)
         * [.unregisterModule(label)](#AxonClient+unregisterModule)
-        * [.initAxon()](#AxonClient+initAxon)
         * [.initStatus()](#AxonClient+initStatus)
-        * [.onMessageCreate(msg)](#AxonClient+onMessageCreate)
-        * [._execCommand(msg, args, command, guildConf)](#AxonClient+_execCommand)
-        * [._execAdmin(msg, guildConf, isOwner)](#AxonClient+_execAdmin)
-        * [._execDM(msg)](#AxonClient+_execDM)
-        * [._execHelp(msg, args, guildConf)](#AxonClient+_execHelp)
         * [.sendFullHelp(msg)](#AxonClient+sendFullHelp) ⇒ <code>Promise.&lt;Message&gt;</code>
-        * [._isGuildIgnored(msg, guildConf)](#AxonClient+_isGuildIgnored) ⇒ <code>Boolean</code>
-        * [._isModuleDisabled(command, guildConf)](#AxonClient+_isModuleDisabled) ⇒ <code>Boolean</code>
-        * [._isCommandDisabled(command, guildConf)](#AxonClient+_isCommandDisabled) ⇒ <code>Boolean</code>
         * [.fetchAxonConf()](#AxonClient+fetchAxonConf) ⇒ <code>Promise.&lt;Object&gt;</code>
         * [.fetchGuildConf(gID)](#AxonClient+fetchGuildConf) ⇒ <code>Promise.&lt;Object&gt;</code>
         * [.resolvePrefix(msg)](#AxonClient+resolvePrefix) ⇒ <code>String</code>
@@ -55,85 +31,6 @@
         * [.AxonClient](#AxonClient.AxonClient)
             * [new AxonClient(token, options, axonOptions, modules)](#new_AxonClient.AxonClient_new)
 
-<a name="new_AxonClient_new"></a>
-
-### new AxonClient()
-AxonCore - Client constructor
-
-<a name="AxonClient+Logger"></a>
-
-### axonClient.Logger
-Logger
-
-**Kind**: instance property of [<code>AxonClient</code>](#AxonClient)  
-<a name="AxonClient+schemas"></a>
-
-### axonClient.schemas
-DataModels
-
-**Kind**: instance property of [<code>AxonClient</code>](#AxonClient)  
-<a name="AxonClient+DBprovider"></a>
-
-### axonClient.DBprovider
-DB
-
-**Kind**: instance property of [<code>AxonClient</code>](#AxonClient)  
-<a name="AxonClient+AxonUtils"></a>
-
-### axonClient.AxonUtils
-Utility
-
-**Kind**: instance property of [<code>AxonClient</code>](#AxonClient)  
-<a name="AxonClient+_tempModules"></a>
-
-### axonClient.\_tempModules
-Modules
-
-**Kind**: instance property of [<code>AxonClient</code>](#AxonClient)  
-<a name="AxonClient+commands"></a>
-
-### axonClient.commands
-Commands, Events
-
-**Kind**: instance property of [<code>AxonClient</code>](#AxonClient)  
-<a name="AxonClient+guildConfigs"></a>
-
-### axonClient.guildConfigs
-GuildConfigs
-
-**Kind**: instance property of [<code>AxonClient</code>](#AxonClient)  
-<a name="AxonClient+blacklistedUsers"></a>
-
-### axonClient.blacklistedUsers
-Initialise Blacklisted users and guilds
-
-**Kind**: instance property of [<code>AxonClient</code>](#AxonClient)  
-<a name="AxonClient+_client"></a>
-
-### axonClient.\_client
-Initialise Eris Client
-
-**Kind**: instance property of [<code>AxonClient</code>](#AxonClient)  
-<a name="AxonClient+params"></a>
-
-### axonClient.params
-Bot settings
-Prefixes - debug - misc
-
-**Kind**: instance property of [<code>AxonClient</code>](#AxonClient)  
-<a name="AxonClient+infos"></a>
-
-### axonClient.infos
-Bot informations
-
-**Kind**: instance property of [<code>AxonClient</code>](#AxonClient)  
-<a name="AxonClient+axonInfos"></a>
-
-### axonClient.axonInfos
-Client specification
-
-**Kind**: instance property of [<code>AxonClient</code>](#AxonClient)  
-<a name="AxonClient+start"></a>
 
 ### axonClient.start()
 START METHOD
@@ -147,25 +44,6 @@ Call Init Method on Ready event.
 Bind All Handlers to the event emission.
 
 **Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
-<a name="AxonClient+initListener"></a>
-
-### axonClient.initListener()
-Initialize error listeners + webhooks
-
-**Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
-<a name="AxonClient+initAllModules"></a>
-
-### axonClient.initAllModules(modules)
-Init and create instance of all modules
-Modules are imported from index.js as a global Object
-
-**Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| modules | <code>Object</code> | Object of Modules file |
-
-<a name="AxonClient+registerModule"></a>
 
 ### axonClient.registerModule(module)
 Register a new Module
@@ -189,13 +67,6 @@ Remove the module of the client + commands + aliases + schemas
 | --- | --- | --- |
 | label | <code>String</code> | Label of the module to unregister |
 
-<a name="AxonClient+initAxon"></a>
-
-### axonClient.initAxon()
-Retrieve Guild schema
-Init the client with value from DB (blacklisted users/guilds)
-
-**Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
 <a name="AxonClient+initStatus"></a>
 
 ### axonClient.initStatus()
@@ -203,83 +74,6 @@ Init Bot status
 Default method. Overridden by initStatus in child.
 
 **Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
-<a name="AxonClient+onMessageCreate"></a>
-
-### axonClient.onMessageCreate(msg)
-Handler when a message is created.
-Do all test and then either:
-  - call execDm
-  - call execAdmin
-  - call execCommand
-  - returns (do nothing)
-
-**Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| msg | <code>Object.&lt;Message&gt;</code> | The message object |
-
-<a name="AxonClient+_execCommand"></a>
-
-### axonClient.\_execCommand(msg, args, command, guildConf)
-Default execute the command
-Logging / Debug Mode
-Error handling and logging
-Call Command._execute
-
-**Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| msg | <code>Object.&lt;Message&gt;</code> | Message Object |
-| args | <code>Array.&lt;String&gt;</code> | Array of args |
-| command | <code>Object.&lt;Command&gt;</code> | Command object resolved |
-| guildConf | <code>Object</code> | Guild Config from the DB |
-
-<a name="AxonClient+_execAdmin"></a>
-
-### axonClient.\_execAdmin(msg, guildConf, isOwner)
-Execute the command with global Admin override
-Logging / Debug Mode
-Error handling and logging
-Call command._executeAdmin
-
-**Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| msg | <code>Object.&lt;Message&gt;</code> | Message Object |
-| guildConf | <code>Oject</code> | Guild config |
-| isOwner | <code>Boolean</code> | Whether the user is bot owner |
-
-<a name="AxonClient+_execDM"></a>
-
-### axonClient.\_execDM(msg)
-Execute command in DM.
-No guildConfig
-Logging / Debug Mode
-Error handling and logging
-Call Command._executeDM
-
-**Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
-
-| Param | Type |
-| --- | --- |
-| msg | <code>Object.&lt;Message&gt;</code> | 
-
-<a name="AxonClient+_execHelp"></a>
-
-### axonClient.\_execHelp(msg, args, guildConf)
-Exec Help command (general)
-Do all necessary checker too (label resolved was help)
-
-**Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| msg | <code>Object.&lt;Message&gt;</code> | The message object |
-| args | <code>Array.&lt;String&gt;</code> | Array of argument |
-| guildConf | <code>Object</code> | GuildConfig from the DB |
 
 <a name="AxonClient+sendFullHelp"></a>
 
@@ -293,45 +87,6 @@ Respecting permissions
 | Param | Type | Description |
 | --- | --- | --- |
 | msg | <code>Object.&lt;Message&gt;</code> | The message object |
-
-<a name="AxonClient+_isGuildIgnored"></a>
-
-### axonClient.\_isGuildIgnored(msg, guildConf) ⇒ <code>Boolean</code>
-Check if the user/role/channel is guild ignored
-
-**Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
-**Returns**: <code>Boolean</code> - True if either one of the three is ignored / False if none  
-
-| Param | Type |
-| --- | --- |
-| msg | <code>Object.&lt;Message&gt;</code> | 
-| guildConf | <code>Object</code> | 
-
-<a name="AxonClient+_isModuleDisabled"></a>
-
-### axonClient.\_isModuleDisabled(command, guildConf) ⇒ <code>Boolean</code>
-Check if the module is server disabled
-
-**Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
-**Returns**: <code>Boolean</code> - True if disabled / Undefined if not  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| command | <code>Object.&lt;Command&gt;</code> | The command object |
-| guildConf | <code>Object</code> | The guild Config object |
-
-<a name="AxonClient+_isCommandDisabled"></a>
-
-### axonClient.\_isCommandDisabled(command, guildConf) ⇒ <code>Boolean</code>
-Check if the command is server disabled
-
-**Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
-**Returns**: <code>Boolean</code> - True if disabled / Undefined if not  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| command | <code>Object.&lt;Command&gt;</code> | The command object |
-| guildConf | <code>Object</code> | The guild Config object |
 
 <a name="AxonClient+fetchAxonConf"></a>
 

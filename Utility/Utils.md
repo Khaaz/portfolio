@@ -14,8 +14,6 @@
         * [.sortRoles(array)](#Utils+sortRoles) ⇒ <code>Array.&lt;Role&gt;</code>
         * [.isRoleHigher(role1, role2)](#Utils+isRoleHigher) ⇒ <code>Boolean</code>
         * [.isHigherRole(guild, first, second)](#Utils+isHigherRole) ⇒ <code>Boolean</code>
-        * [.readJson()](#Utils+readJson)
-        * [.writeJson()](#Utils+writeJson)
         * [.compareObject(obj1, obj2)](#Utils+compareObject) ⇒ <code>Boolean</code>
     * _static_
         * [.Utils](#Utils.Utils)
@@ -115,19 +113,7 @@ Check if the higher role of member1 is higher than higher role of member2
 | guild | <code>Object.&lt;Guild&gt;</code> | 
 | first | <code>Object.&lt;Member&gt;</code> | 
 | second | <code>Object.&lt;Member&gt;</code> | 
-
-<a name="Utils+readJson"></a>
-
-### utils.readJson()
-read file
-
-**Kind**: instance method of [<code>Utils</code>](#Utils)  
-<a name="Utils+writeJson"></a>
-
-### utils.writeJson()
-write file
-
-**Kind**: instance method of [<code>Utils</code>](#Utils)  
+  
 <a name="Utils+compareObject"></a>
 
 ### utils.compareObject(obj1, obj2) ⇒ <code>Boolean</code>
