@@ -73,8 +73,8 @@
       newLink.setAttribute("id", "theme");
       newLink.setAttribute("rel", "stylesheet");
       newLink.setAttribute("id", "theme");
-      console.log(oldLink.href);
-      if (oldLink.href === "http://unpkg.com/docsify/lib/themes/dark.css") {
+      
+      if (oldLink.href === "http://unpkg.com/docsify/lib/themes/dark.css" || oldLink.href === "https://unpkg.com/docsify/lib/themes/dark.css") {
         newLink.setAttribute("href", "//unpkg.com/docsify/lib/themes/vue.css");
       } else {
         newLink.setAttribute("href", "//unpkg.com/docsify/lib/themes/dark.css");
