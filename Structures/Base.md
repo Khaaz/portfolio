@@ -15,7 +15,8 @@
         * [.sendError(channel, content, options)](#Base+sendError) ⇒ <code>Promise.&lt;?Message&gt;</code>
         * [.sendSuccess(channel, content, options)](#Base+sendSuccess) ⇒ <code>Promise.&lt;?Message&gt;</code>
         * [.error(msg, err, type, errMsg)](#Base+error) ⇒ <code>Promise.&lt;?Message&gt;</code>
-        * [.toJSON()](#Base+toJSON)
+        * [.toString()](#Base+toString) ⇒ <code>String</code>
+        * [.toJSON()](#Base+toJSON) ⇒ <code>Object</code>
     * _static_
         * [.Base](#Base.Base)
             * [new Base(axonClient)](#new_Base.Base_new)
@@ -143,12 +144,22 @@ Call sendError
 | type | <code>String</code> | Type of error (api, db, internal) |
 | errMsg | <code>String</code> | Optional error message |
 
-<a name="Base+toJSON"></a>
+<a name="Base+toString"></a>
 
-### base.toJSON()
-From ERIS
+### base.toString() ⇒ <code>String</code>
+ToString method.
 
 **Kind**: instance method of [<code>Base</code>](#Base)  
+
+<a name="Base+toJSON"></a>
+
+### base.toJSON() ⇒ <code>Object</code>
+ToJSON method.
+(method took from eris)
+
+**Kind**: instance method of [<code>Base</code>](#Base)  
+**Returns**: <code>Object</code> - JSON-like Object  
+
 <a name="Base.Base"></a>
 
 ### Base.Base

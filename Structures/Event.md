@@ -6,9 +6,23 @@
 **Author**: KhaaZ  
 
 * [Event](#Event) ⇐ <code>Base</code>
+    * _instance_
+        * [._execute(guildConf, ...args)](#Event+_execute) ⇒ <code>Promise</code>
     * _static_
         * [.Event](#Event.Event)
             * [new Event(module)](#new_Event.Event_new)
+
+<a name="Event+_execute"></a>
+
+### event.\_execute(guildConf, ...args) ⇒ <code>Promise</code>
+Promisify the return execute return to prevent promise issue
+
+**Kind**: instance method of [<code>Event</code>](#Event)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| guildConf | <code>Object</code> | the guildConfig or undefined if not a guild event |
+| ...args | <code>Array</code> | Array of the events arguments |
 
 <a name="Event.Event"></a>
 

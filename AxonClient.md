@@ -27,6 +27,8 @@
         * [.updateStateEvent(guildID, label, [boolean])](#AxonClient+updateStateEvent) ⇒ <code>Promise.&lt;Object&gt;</code>
         * [.updateGlobalStateModule(module, [state])](#AxonClient+updateGlobalStateModule)
         * [.updateGlobalStateCommand(command, [state])](#AxonClient+updateGlobalStateCommand)
+        * [.toString()](#AxonClient+toString) ⇒ <code>String</code>
+        * [.toJSON()](#AxonClient+toJSON) ⇒ <code>Object</code>
     * _static_
         * [.AxonClient](#AxonClient.AxonClient)
             * [new AxonClient(token, options, axonOptions, modules)](#new_AxonClient.AxonClient_new)
@@ -37,6 +39,7 @@ START METHOD
 AxonClient class is already created
 
 **Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
+
 <a name="AxonClient+onReady"></a>
 
 ### axonClient.onReady()
@@ -96,6 +99,7 @@ Create a schema if none found or error
 
 **Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - Axon schema from the DB / error  
+
 <a name="AxonClient+fetchGuildConf"></a>
 
 ### axonClient.fetchGuildConf(gID) ⇒ <code>Promise.&lt;Object&gt;</code>
@@ -280,6 +284,22 @@ Enable/Disable a command globally
 | --- | --- | --- | --- |
 | command | <code>String</code> |  | Command name |
 | [state] | <code>Boolean</code> | <code>true</code> | Whether to enable or disable |
+
+<a name="AxonClient+toString"></a>
+
+### axonClient.toString() ⇒ <code>String</code>
+ToString method.
+
+**Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
+
+<a name="AxonClient+toJSON"></a>
+
+### axonClient.toJSON() ⇒ <code>Object</code>
+ToJSON method.
+(method took from eris)
+
+**Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
+**Returns**: <code>Object</code> - JSON-like Object  
 
 <a name="AxonClient.AxonClient"></a>
 
