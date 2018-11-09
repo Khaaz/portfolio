@@ -7,36 +7,33 @@
 * [Base](#Base)
     * [new Base()](#new_Base_new)
     * _instance_
-        * [.getModule(module)](#Base+getModule) ⇒ <code>Object.&lt;Module&gt;</code> \| <code>NULL</code>
-        * [.getCommand(fullLabel)](#Base+getCommand) ⇒ <code>Object.&lt;Command&gt;</code> \| <code>NULL</code>
-        * [.sendDM(user, content, options)](#Base+sendDM) ⇒ <code>Promise.&lt;?Message&gt;</code>
-        * [.sendMessage(channel, content, [options])](#Base+sendMessage) ⇒ <code>Promise.&lt;?Message&gt;</code>
-        * [.editMessage(message, content)](#Base+editMessage) ⇒ <code>Promise.&lt;?Message&gt;</code>
-        * [.sendError(channel, content, options)](#Base+sendError) ⇒ <code>Promise.&lt;?Message&gt;</code>
-        * [.sendSuccess(channel, content, options)](#Base+sendSuccess) ⇒ <code>Promise.&lt;?Message&gt;</code>
-        * [.error(msg, err, type, errMsg)](#Base+error) ⇒ <code>Promise.&lt;?Message&gt;</code>
-        * [.toString()](#Base+toString) ⇒ <code>String</code>
-        * [.toJSON()](#Base+toJSON) ⇒ <code>Object</code>
+        * [getModule(module)](#Base+getModule) ⇒ <code>Object.&lt;Module&gt;</code> \| <code>NULL</code>
+        * [getCommand(fullLabel)](#Base+getCommand) ⇒ <code>Object.&lt;Command&gt;</code> \| <code>NULL</code>
+        * [sendDM(user, content, options)](#Base+sendDM) ⇒ <code>Promise.&lt;?Message&gt;</code>
+        * [sendMessage(channel, content, [options])](#Base+sendMessage) ⇒ <code>Promise.&lt;?Message&gt;</code>
+        * [editMessage(message, content)](#Base+editMessage) ⇒ <code>Promise.&lt;?Message&gt;</code>
+        * [sendError(channel, content, options)](#Base+sendError) ⇒ <code>Promise.&lt;?Message&gt;</code>
+        * [sendSuccess(channel, content, options)](#Base+sendSuccess) ⇒ <code>Promise.&lt;?Message&gt;</code>
+        * [error(msg, err, type, errMsg)](#Base+error) ⇒ <code>Promise.&lt;?Message&gt;</code>
+        * [toString()](#Base+toString) ⇒ <code>String</code>
+        * [toJSON()](#Base+toJSON) ⇒ <code>Object</code>
     * _static_
-        * [.Base](#Base.Base)
+        * [Base](#Base.Base)
             * [new Base(axonClient)](#new_Base.Base_new)
 
 <a name="new_Base_new"></a>
 
 ### new Base()
-Base Class with default methods used by all Commands / Modules / Events
-toString
-toJson
-inspect
+Base Class has default methods used by all Commands / Modules / Events
 
-Based of Eris.Base
+Based on Eris.Base
 
 <a name="Base+getModule"></a>
 
 ### base.getModule(module) ⇒ <code>Object.&lt;Module&gt;</code> \| <code>NULL</code>
-Get a module from AxonClient with the label
+Gets a module from AxonClient with the label
 
-**Kind**: instance method of [<code>Base</code>](#Base)  
+**Kind**: Instance method of [<code>Base</code>](#Base)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -45,9 +42,9 @@ Get a module from AxonClient with the label
 <a name="Base+getCommand"></a>
 
 ### base.getCommand(fullLabel) ⇒ <code>Object.&lt;Command&gt;</code> \| <code>NULL</code>
-Get a command/subcommand from AxonClient with the full label
+Gets a command/subcommand from AxonClient with the full label
 
-**Kind**: instance method of [<code>Base</code>](#Base)  
+**Kind**: Instance method of [<code>Base</code>](#Base)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -56,10 +53,10 @@ Get a command/subcommand from AxonClient with the full label
 <a name="Base+sendDM"></a>
 
 ### base.sendDM(user, content, options) ⇒ <code>Promise.&lt;?Message&gt;</code>
-DM targeted user if the bot is able to retrieve DM channel.
-Reject promise if not
+DMs targetted user if the bot is able to retrieve the DM channel of the targetted user.
+Rejects promise if not
 
-**Kind**: instance method of [<code>Base</code>](#Base)  
+**Kind**: Instance method of [<code>Base</code>](#Base)  
 **Returns**: <code>Promise.&lt;?Message&gt;</code> - Message Object  
 
 | Param | Type | Description |
@@ -71,11 +68,11 @@ Reject promise if not
 <a name="Base+sendMessage"></a>
 
 ### base.sendMessage(channel, content, [options]) ⇒ <code>Promise.&lt;?Message&gt;</code>
-Send a message.
-Check for bot permissions + message/embed length
+Sends a message.
+Checks for bot permissions + message/embed length
 Doesn't support file
 
-**Kind**: instance method of [<code>Base</code>](#Base)  
+**Kind**: Instance method of [<code>Base</code>](#Base)  
 **Returns**: <code>Promise.&lt;?Message&gt;</code> - Message Object  
 
 | Param | Type | Default | Description |
@@ -87,10 +84,10 @@ Doesn't support file
 <a name="Base+editMessage"></a>
 
 ### base.editMessage(message, content) ⇒ <code>Promise.&lt;?Message&gt;</code>
-Edit a message
-Check for bot permissions + message embed/length
+Edits a message
+Checks for bot permissions + message embed/length
 
-**Kind**: instance method of [<code>Base</code>](#Base)  
+**Kind**: Instance method of [<code>Base</code>](#Base)  
 **Returns**: <code>Promise.&lt;?Message&gt;</code> - Message Object  
 
 | Param | Type | Description |
@@ -101,10 +98,10 @@ Check for bot permissions + message embed/length
 <a name="Base+sendError"></a>
 
 ### base.sendError(channel, content, options) ⇒ <code>Promise.&lt;?Message&gt;</code>
-Send an error message. Add the error emote to the content
-Check for sendMessage perms
+Sends an error message. Add the error emote to the content
+Checks for sendMessage perms
 
-**Kind**: instance method of [<code>Base</code>](#Base)  
+**Kind**: Instance method of [<code>Base</code>](#Base)  
 **Returns**: <code>Promise.&lt;?Message&gt;</code> - Message Object  
 
 | Param | Type | Description |
@@ -116,10 +113,10 @@ Check for sendMessage perms
 <a name="Base+sendSuccess"></a>
 
 ### base.sendSuccess(channel, content, options) ⇒ <code>Promise.&lt;?Message&gt;</code>
-Send a success message. Add the success emote to the content
-Check for sendMessage perms
+Sends a success message. Add the success emote to the content
+Checks for sendMessage perms
 
-**Kind**: instance method of [<code>Base</code>](#Base)  
+**Kind**: Instance method of [<code>Base</code>](#Base)  
 **Returns**: <code>Promise.&lt;?Message&gt;</code> - Message Object  
 
 | Param | Type | Description |
@@ -131,10 +128,10 @@ Check for sendMessage perms
 <a name="Base+error"></a>
 
 ### base.error(msg, err, type, errMsg) ⇒ <code>Promise.&lt;?Message&gt;</code>
-Handle errors (send error message/log)
-Call sendError
+Handles errors (send error message/log)
+Calls sendError
 
-**Kind**: instance method of [<code>Base</code>](#Base)  
+**Kind**: Instance method of [<code>Base</code>](#Base)  
 **Returns**: <code>Promise.&lt;?Message&gt;</code> - Message Object  
 
 | Param | Type | Description |
@@ -149,7 +146,7 @@ Call sendError
 ### base.toString() ⇒ <code>String</code>
 ToString method.
 
-**Kind**: instance method of [<code>Base</code>](#Base)  
+**Kind**: Instance method of [<code>Base</code>](#Base)  
 
 <a name="Base+toJSON"></a>
 
@@ -157,13 +154,13 @@ ToString method.
 ToJSON method.
 (method took from eris)
 
-**Kind**: instance method of [<code>Base</code>](#Base)  
+**Kind**: Instance method of [<code>Base</code>](#Base)  
 **Returns**: <code>Object</code> - JSON-like Object  
 
 <a name="Base.Base"></a>
 
 ### Base.Base
-**Kind**: static class of [<code>Base</code>](#Base)  
+**Kind**: Static class of [<code>Base</code>](#Base)  
 **Properties**
 
 | Name | Type | Description |
@@ -178,7 +175,7 @@ ToJSON method.
 <a name="new_Base.Base_new"></a>
 
 #### new Base(axonClient)
-Creates an instance of Base.
+Creates an Instance of Base.
 
 
 | Param | Type |

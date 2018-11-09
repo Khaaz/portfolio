@@ -7,29 +7,29 @@
 
 * [Module](#Module) ⇐ <code>Base</code>
     * _instance_
-        * [.init(commands, events, events)](#Module+init)
-        * [.initAllCommands(commands)](#Module+initAllCommands)
-        * [.initAllEvents(events)](#Module+initAllEvents)
-        * [.initAllSchemas(schemas)](#Module+initAllSchemas)
-        * [.registerCommand(command)](#Module+registerCommand) ⇒ <code>Boolean</code>
-        * [.registerSubCommand(command, subCommand)](#Module+registerSubCommand) ⇒ <code>Boolean</code>
-        * [.registerEvent(event)](#Module+registerEvent) ⇒ <code>Boolean</code>
-        * [.registerSchema(key, schema)](#Module+registerSchema) ⇒ <code>Boolean</code>
-        * [.unregisterCommand(label)](#Module+unregisterCommand) ⇒ <code>Boolean</code>
-        * [.unregisterSubCommand(command, command)](#Module+unregisterSubCommand)
-        * [.unregisterSchema(label)](#Module+unregisterSchema) ⇒ <code>Boolean</code>
-        * [.unregisterEvent(label)](#Module+unregisterEvent) ⇒ <code>Boolean</code>
+        * [init(commands, events, events)](#Module+init)
+        * [initAllCommands(commands)](#Module+initAllCommands)
+        * [initAllEvents(events)](#Module+initAllEvents)
+        * [initAllSchemas(schemas)](#Module+initAllSchemas)
+        * [registerCommand(command)](#Module+registerCommand) ⇒ <code>Boolean</code>
+        * [registerSubCommand(command, subCommand)](#Module+registerSubCommand) ⇒ <code>Boolean</code>
+        * [registerEvent(event)](#Module+registerEvent) ⇒ <code>Boolean</code>
+        * [registerSchema(key, schema)](#Module+registerSchema) ⇒ <code>Boolean</code>
+        * [unregisterCommand(label)](#Module+unregisterCommand) ⇒ <code>Boolean</code>
+        * [unregisterSubCommand(command, command)](#Module+unregisterSubCommand)
+        * [unregisterSchema(label)](#Module+unregisterSchema) ⇒ <code>Boolean</code>
+        * [unregisterEvent(label)](#Module+unregisterEvent) ⇒ <code>Boolean</code>
     * _static_
-        * [.Module](#Module.Module)
+        * [Module](#Module.Module)
             * [new Module(client)](#new_Module.Module_new)
   
 <a name="Module+init"></a>
 
 ### module.init(commands, events, events)
-Init a module with all commands and events.
-(called at the end of every Module contructor with correct parameters)
+Initializes a module with all of its commands and events.
+(Called at the end of every Module contructor with correct parameters)
 
-**Kind**: instance method of [<code>Module</code>](#Module)  
+**Kind**: Instance method of [<code>Module</code>](#Module)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -40,10 +40,10 @@ Init a module with all commands and events.
 <a name="Module+initAllCommands"></a>
 
 ### module.initAllCommands(commands)
-Init and construct all commands from the list of commands given in param
+Initalizes and constructs all commands from the list of commands given in the param
 (imported as a global object from index.js file)
 
-**Kind**: instance method of [<code>Module</code>](#Module)  
+**Kind**: Instance method of [<code>Module</code>](#Module)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -52,10 +52,10 @@ Init and construct all commands from the list of commands given in param
 <a name="Module+initAllEvents"></a>
 
 ### module.initAllEvents(events)
-Init and construct all events from the list of events given in param
+Initalizes and constructs all events from the list of events given in the param
 (imported as a global object from index.js file)
 
-**Kind**: instance method of [<code>Module</code>](#Module)  
+**Kind**: Instance method of [<code>Module</code>](#Module)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -64,10 +64,10 @@ Init and construct all events from the list of events given in param
 <a name="Module+initAllSchemas"></a>
 
 ### module.initAllSchemas(schemas)
-Init all schemas from the list of schemas given in param into a Collection
-(imported as a global object from index.js file)
+Initalizes all schemas from the list of schemas given in the param, into a Collection
+(Imported as a global object from index.js file)
 
-**Kind**: instance method of [<code>Module</code>](#Module)  
+**Kind**: Instance method of [<code>Module</code>](#Module)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -76,10 +76,10 @@ Init all schemas from the list of schemas given in param into a Collection
 <a name="Module+registerCommand"></a>
 
 ### module.registerCommand(command) ⇒ <code>Boolean</code>
-Register a Command (ensure validity)
-Add it to the Module.
+Registers a Command (Ensures validity)
+Adds it to the Module.
 
-**Kind**: instance method of [<code>Module</code>](#Module)  
+**Kind**: Instance method of [<code>Module</code>](#Module)  
 **Returns**: <code>Boolean</code> - True if worked / False if not  
 
 | Param | Type | Description |
@@ -89,10 +89,10 @@ Add it to the Module.
 <a name="Module+registerSubCommand"></a>
 
 ### module.registerSubCommand(command, subCommand) ⇒ <code>Boolean</code>
-Register a SubCommand (ensure valitidy)
-Add it to the command parent.
+Registers a SubCommand (Ensures valitidy)
+Adds it to the parent command.
 
-**Kind**: instance method of [<code>Module</code>](#Module)  
+**Kind**: Instance method of [<code>Module</code>](#Module)  
 **Returns**: <code>Boolean</code> - True if worked / False if not  
 
 | Param | Type | Description |
@@ -103,10 +103,10 @@ Add it to the command parent.
 <a name="Module+registerEvent"></a>
 
 ### module.registerEvent(event) ⇒ <code>Boolean</code>
-Register an Event (ensure valitidy)
-Add it to the Module.
+Registers an Event (Ensures valitidy)
+Adds it to the Module.
 
-**Kind**: instance method of [<code>Module</code>](#Module)  
+**Kind**: Instance method of [<code>Module</code>](#Module)  
 **Returns**: <code>Boolean</code> - True if worked / False if not  
 
 | Param | Type | Description |
@@ -116,9 +116,9 @@ Add it to the Module.
 <a name="Module+registerSchema"></a>
 
 ### module.registerSchema(key, schema) ⇒ <code>Boolean</code>
-Register a Schema into a module
+Registers a Schema into a module
 
-**Kind**: instance method of [<code>Module</code>](#Module)  
+**Kind**: Instance method of [<code>Module</code>](#Module)  
 **Returns**: <code>Boolean</code> - True if worked / Error if not  
 
 | Param | Type | Description |
@@ -129,9 +129,9 @@ Register a Schema into a module
 <a name="Module+unregisterCommand"></a>
 
 ### module.unregisterCommand(label) ⇒ <code>Boolean</code>
-Remove a command from a Module and from the global cache
+Removes a command from a Module and from the global cache
 
-**Kind**: instance method of [<code>Module</code>](#Module)  
+**Kind**: Instance method of [<code>Module</code>](#Module)  
 **Returns**: <code>Boolean</code> - True if worked / Error if not  
 
 | Param | Type | Description |
@@ -141,9 +141,9 @@ Remove a command from a Module and from the global cache
 <a name="Module+unregisterSubCommand"></a>
 
 ### module.unregisterSubCommand(command, command)
-Remove a subcommand from a command
+Removes a subcommand from a command
 
-**Kind**: instance method of [<code>Module</code>](#Module)  
+**Kind**: Instance method of [<code>Module</code>](#Module)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -153,9 +153,9 @@ Remove a subcommand from a command
 <a name="Module+unregisterSchema"></a>
 
 ### module.unregisterSchema(label) ⇒ <code>Boolean</code>
-Remove a schema from Module and global cache
+Removes a schema from the Module and the global cache
 
-**Kind**: instance method of [<code>Module</code>](#Module)  
+**Kind**: Instance method of [<code>Module</code>](#Module)  
 **Returns**: <code>Boolean</code> - True if worked / Error if not  
 
 | Param | Type | Description |
@@ -165,9 +165,9 @@ Remove a schema from Module and global cache
 <a name="Module+unregisterEvent"></a>
 
 ### module.unregisterEvent(label) ⇒ <code>Boolean</code>
-Remove an Event from Module and Event Manager
+Removes an Event from Module and Event Manager
 
-**Kind**: instance method of [<code>Module</code>](#Module)  
+**Kind**: Instance method of [<code>Module</code>](#Module)  
 **Returns**: <code>Boolean</code> - True if worked / Error if not  
 
 | Param | Type | Description |
@@ -177,7 +177,7 @@ Remove an Event from Module and Event Manager
 <a name="Module.Module"></a>
 
 ### Module.Module
-**Kind**: static class of [<code>Module</code>](#Module)  
+**Kind**: Static class of [<code>Module</code>](#Module)  
 **Properties**
 
 | Name | Type | Default | Description |
@@ -199,7 +199,7 @@ Remove an Event from Module and Event Manager
 <a name="new_Module.Module_new"></a>
 
 #### new Module(client)
-Creates an instance of Module.
+Creates an Instance of Module.
 
 
 | Param | Type |
