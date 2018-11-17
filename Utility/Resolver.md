@@ -4,13 +4,13 @@
 **Kind**: static class  
 **Author**: KhaaZ  
 
-* [.Resolver](#Resolver)
+* [Resolver](#Resolver)
     * [new Resolver()](#new_Resolver_new)
-    * [.user(client, args)](#Resolver.user) ⇒ <code>Object</code> \| <code>null</code>
-    * [.member(guild, args)](#Resolver.member) ⇒ <code>Object</code> \| <code>null</code>
-    * [.role(guild, args)](#Resolver.role) ⇒ <code>Object</code> \| <code>null</code>
-    * [.channel(guild, args)](#Resolver.channel) ⇒ <code>Object</code> \| <code>null</code>
-    * [.guild(client, args)](#Resolver.guild) ⇒ <code>Object</code> \| <code>null</code>
+    * [user(client, args)](#Resolver.user) ⇒ <code>Object</code> \| <code>null</code>
+    * [member(guild, args)](#Resolver.member) ⇒ <code>Object</code> \| <code>null</code>
+    * [role(guild, args)](#Resolver.role) ⇒ <code>Object</code> \| <code>null</code>
+    * [channel(guild, args)](#Resolver.channel) ⇒ <code>Object</code> \| <code>null</code>
+    * [guild(client, args)](#Resolver.guild) ⇒ <code>Object</code> \| <code>null</code>
 
 <a name="new_Resolver_new"></a>
 
@@ -22,7 +22,7 @@ Resolver class for AxonClient
 ### Resolver.user(client, args) ⇒ <code>Object</code> \| <code>null</code>
 User resolver
 
-**Kind**: static method of [<code>Resolver</code>](#Resolver)  
+**Kind**: Static method of [<code>Resolver</code>](#Resolver)  
 **Returns**: <code>Object</code> \| <code>null</code> - The user object / Null if not found / Error  
 
 | Param | Type | Description |
@@ -35,7 +35,7 @@ User resolver
 ### Resolver.member(guild, args) ⇒ <code>Object</code> \| <code>null</code>
 Member resolver
 
-**Kind**: static method of [<code>Resolver</code>](#Resolver)  
+**Kind**: Static method of [<code>Resolver</code>](#Resolver)  
 **Returns**: <code>Object</code> \| <code>null</code> - The member object / Null if not found / Error  
 
 | Param | Type | Description |
@@ -48,7 +48,7 @@ Member resolver
 ### Resolver.role(guild, args) ⇒ <code>Object</code> \| <code>null</code>
 Role resolver
 
-**Kind**: static method of [<code>Resolver</code>](#Resolver)  
+**Kind**: Static method of [<code>Resolver</code>](#Resolver)  
 **Returns**: <code>Object</code> \| <code>null</code> - The role object / Null if not found / Error  
 
 | Param | Type | Description |
@@ -61,7 +61,7 @@ Role resolver
 ### Resolver.channel(guild, args) ⇒ <code>Object</code> \| <code>null</code>
 Channel resolver
 
-**Kind**: static method of [<code>Resolver</code>](#Resolver)  
+**Kind**: Static method of [<code>Resolver</code>](#Resolver)  
 **Returns**: <code>Object</code> \| <code>null</code> - The channel object / Null if not found / Error  
 
 | Param | Type | Description |
@@ -74,7 +74,7 @@ Channel resolver
 ### Resolver.guild(client, args) ⇒ <code>Object</code> \| <code>null</code>
 Guild resolver
 
-**Kind**: static method of [<code>Resolver</code>](#Resolver)  
+**Kind**: Static method of [<code>Resolver</code>](#Resolver)  
 **Returns**: <code>Object</code> \| <code>null</code> - The guild object / Null if not found / Error  
 
 | Param | Type | Description |

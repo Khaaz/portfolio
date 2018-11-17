@@ -7,16 +7,16 @@
 * [Utils](#Utils)
     * [new Utils()](#new_Utils_new)
     * _instance_
-        * [.splitMessage(content)](#Utils+splitMessage) ⇒ <code>Array.&lt;String&gt;</code> \| <code>String</code>
-        * [.getPrefix(msg)](#Utils+getPrefix) ⇒ <code>String</code>
-        * [.getRoles(guild, member)](#Utils+getRoles) ⇒ <code>Array.&lt;Role&gt;</code>
-        * [.getHighestRole(guild, member)](#Utils+getHighestRole) ⇒ <code>Object.&lt;Role&gt;</code>
-        * [.sortRoles(array)](#Utils+sortRoles) ⇒ <code>Array.&lt;Role&gt;</code>
-        * [.isRoleHigher(role1, role2)](#Utils+isRoleHigher) ⇒ <code>Boolean</code>
-        * [.isHigherRole(guild, first, second)](#Utils+isHigherRole) ⇒ <code>Boolean</code>
-        * [.compareObject(obj1, obj2)](#Utils+compareObject) ⇒ <code>Boolean</code>
+        * [splitMessage(content)](#Utils+splitMessage) ⇒ <code>Array.&lt;String&gt;</code> \| <code>String</code>
+        * [getPrefix(msg)](#Utils+getPrefix) ⇒ <code>String</code>
+        * [getRoles(guild, member)](#Utils+getRoles) ⇒ <code>Array.&lt;Role&gt;</code>
+        * [getHighestRole(guild, member)](#Utils+getHighestRole) ⇒ <code>Object.&lt;Role&gt;</code>
+        * [sortRoles(array)](#Utils+sortRoles) ⇒ <code>Array.&lt;Role&gt;</code>
+        * [isRoleHigher(role1, role2)](#Utils+isRoleHigher) ⇒ <code>Boolean</code>
+        * [isHigherRole(guild, first, second)](#Utils+isHigherRole) ⇒ <code>Boolean</code>
+        * [compareObject(obj1, obj2)](#Utils+compareObject) ⇒ <code>Boolean</code>
     * _static_
-        * [.Utils](#Utils.Utils)
+        * [Utils](#Utils.Utils)
             * [new Utils()](#new_Utils.Utils_new)
 
 <a name="new_Utils_new"></a>
@@ -29,10 +29,10 @@ All methods useful and usable everywhere
 <a name="Utils+splitMessage"></a>
 
 ### utils.splitMessage(content) ⇒ <code>Array.&lt;String&gt;</code> \| <code>String</code>
-Split a content (String), according to correct linebreaks.
+Splits a content (String), according to correct linebreaks.
 split at 1900 char
 
-**Kind**: instance method of [<code>Utils</code>](#Utils)  
+**Kind**: Instance method of [<code>Utils</code>](#Utils)  
 **Returns**: <code>Array.&lt;String&gt;</code> \| <code>String</code> - The array of content string splitted or the original String  
 
 | Param | Type |
@@ -44,7 +44,7 @@ split at 1900 char
 ### utils.getPrefix(msg) ⇒ <code>String</code>
 Returns the guild prefix of the given msg.
 
-**Kind**: instance method of [<code>Utils</code>](#Utils)  
+**Kind**: Instance method of [<code>Utils</code>](#Utils)  
 **Returns**: <code>String</code> - The prefix as string.  
 
 | Param | Type | Description |
@@ -54,9 +54,9 @@ Returns the guild prefix of the given msg.
 <a name="Utils+getRoles"></a>
 
 ### utils.getRoles(guild, member) ⇒ <code>Array.&lt;Role&gt;</code>
-Get an Array of roles Object from a member
+Gets an Array of role Object that the member has
 
-**Kind**: instance method of [<code>Utils</code>](#Utils)  
+**Kind**: Instance method of [<code>Utils</code>](#Utils)  
 **Returns**: <code>Array.&lt;Role&gt;</code> - Array of roles object  
 
 | Param | Type |
@@ -67,9 +67,9 @@ Get an Array of roles Object from a member
 <a name="Utils+getHighestRole"></a>
 
 ### utils.getHighestRole(guild, member) ⇒ <code>Object.&lt;Role&gt;</code>
-Get highest role from a member
+Gets the highest role of a member
 
-**Kind**: instance method of [<code>Utils</code>](#Utils)  
+**Kind**: Instance method of [<code>Utils</code>](#Utils)  
 **Returns**: <code>Object.&lt;Role&gt;</code> - Role Object  
 
 | Param | Type |
@@ -80,9 +80,9 @@ Get highest role from a member
 <a name="Utils+sortRoles"></a>
 
 ### utils.sortRoles(array) ⇒ <code>Array.&lt;Role&gt;</code>
-Sort a users roles from higher role to last role
+Sorts a users roles from the higher role to the lower role
 
-**Kind**: instance method of [<code>Utils</code>](#Utils)  
+**Kind**: Instance method of [<code>Utils</code>](#Utils)  
 **Returns**: <code>Array.&lt;Role&gt;</code> - Sorted array (per position) of Role Object  
 
 | Param | Type | Description |
@@ -92,9 +92,9 @@ Sort a users roles from higher role to last role
 <a name="Utils+isRoleHigher"></a>
 
 ### utils.isRoleHigher(role1, role2) ⇒ <code>Boolean</code>
-Check if a role is higher than the other
+Checks if a role is higher than the other
 
-**Kind**: instance method of [<code>Utils</code>](#Utils)  
+**Kind**: Instance method of [<code>Utils</code>](#Utils)  
 
 | Param | Type |
 | --- | --- |
@@ -104,9 +104,9 @@ Check if a role is higher than the other
 <a name="Utils+isHigherRole"></a>
 
 ### utils.isHigherRole(guild, first, second) ⇒ <code>Boolean</code>
-Check if the higher role of member1 is higher than higher role of member2
+Checks if the higher role of member1 is higher than higher role of member2
 
-**Kind**: instance method of [<code>Utils</code>](#Utils)  
+**Kind**: Instance method of [<code>Utils</code>](#Utils)  
 
 | Param | Type |
 | --- | --- |
@@ -120,7 +120,7 @@ Check if the higher role of member1 is higher than higher role of member2
 Ensures that all property names of obj1 exists in obj2.
 Doesn't compare values. Exept if it is an object, then it check for property names recursively
 
-**Kind**: instance method of [<code>Utils</code>](#Utils)  
+**Kind**: Instance method of [<code>Utils</code>](#Utils)  
 **Returns**: <code>Boolean</code> - True: obj2 has at least all prop of obj1  
 
 | Param | Type | Description |
@@ -131,7 +131,7 @@ Doesn't compare values. Exept if it is an object, then it check for property nam
 <a name="Utils.Utils"></a>
 
 ### Utils.Utils
-**Kind**: static class of [<code>Utils</code>](#Utils)  
+**Kind**: Static class of [<code>Utils</code>](#Utils)  
 **Properties**
 
 | Name | Type | Description |
@@ -147,5 +147,5 @@ Doesn't compare values. Exept if it is an object, then it check for property nam
 <a name="new_Utils.Utils_new"></a>
 
 #### new Utils()
-Creates an instance of Utils.
+Creates an Instance of Utils.
 

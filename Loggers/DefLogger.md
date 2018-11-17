@@ -7,25 +7,25 @@
 
 * [DefLogger](#DefLogger) ⇐ <code>Console</code>
     * [new DefLogger()](#new_DefLogger_new)
-    * [.emerg(input, opt)](#DefLogger+emerg)
-    * [.error(input, opt)](#DefLogger+error)
-    * [.warn(input, opt)](#DefLogger+warn)
-    * [.debug(input, opt)](#DefLogger+debug)
-    * [.notice(input, opt)](#DefLogger+notice)
-    * [.info(input, opt)](#DefLogger+info)
-    * [.verbose(input, opt)](#DefLogger+verbose)
-    * [.axon(input)](#DefLogger+axon)
-    * [.init(input)](#DefLogger+init)
-    * [.initModule(module)](#DefLogger+initModule)
-    * [.initCommand(command)](#DefLogger+initCommand)
-    * [.initSubCmd(sub)](#DefLogger+initSubCmd)
-    * [.initEvent(sub)](#DefLogger+initEvent)
+    * [emerg(input, opt)](#DefLogger+emerg)
+    * [error(input, opt)](#DefLogger+error)
+    * [warn(input, opt)](#DefLogger+warn)
+    * [debug(input, opt)](#DefLogger+debug)
+    * [notice(input, opt)](#DefLogger+notice)
+    * [info(input, opt)](#DefLogger+info)
+    * [verbose(input, opt)](#DefLogger+verbose)
+    * [axon(input)](#DefLogger+axon)
+    * [init(input)](#DefLogger+init)
+    * [initModule(module)](#DefLogger+initModule)
+    * [initCommand(command)](#DefLogger+initCommand)
+    * [initSubCmd(sub)](#DefLogger+initSubCmd)
+    * [initEvent(sub)](#DefLogger+initEvent)
 
 <a name="new_DefLogger_new"></a>
 
 ### new DefLogger()
-Default Logger with time and custom method
-Allow clean logging without any dependency
+A default Logger that has time and custom methods
+Allows clean logging without any dependency
 
 <a name="DefLogger+emerg"></a>
 
@@ -80,7 +80,7 @@ Eval - Debugging logs
 <a name="DefLogger+notice"></a>
 
 ### defLogger.notice(input, opt)
-Important informations
+Important information
 
 **Kind**: instance method of [<code>DefLogger</code>](#DefLogger)  
 
@@ -92,7 +92,7 @@ Important informations
 <a name="DefLogger+info"></a>
 
 ### defLogger.info(input, opt)
-Default informations
+Default information
 
 **Kind**: instance method of [<code>DefLogger</code>](#DefLogger)  
 
@@ -117,7 +117,7 @@ Commands usage...
 <a name="DefLogger+axon"></a>
 
 ### defLogger.axon(input)
-AxonClient informations
+AxonClient information
 
 **Kind**: instance method of [<code>DefLogger</code>](#DefLogger)  
 
@@ -128,7 +128,7 @@ AxonClient informations
 <a name="DefLogger+init"></a>
 
 ### defLogger.init(input)
-Initialisation - Client infos
+Initialization - Client info
 
 **Kind**: instance method of [<code>DefLogger</code>](#DefLogger)  
 
@@ -139,7 +139,7 @@ Initialisation - Client infos
 <a name="DefLogger+initModule"></a>
 
 ### defLogger.initModule(module)
-Initialisation - Module infos
+Initialization - Module info
 
 **Kind**: instance method of [<code>DefLogger</code>](#DefLogger)  
 
@@ -150,7 +150,7 @@ Initialisation - Module infos
 <a name="DefLogger+initCommand"></a>
 
 ### defLogger.initCommand(command)
-Initialisation - Command infos
+Initialization - Command info
 
 **Kind**: instance method of [<code>DefLogger</code>](#DefLogger)  
 
@@ -161,7 +161,7 @@ Initialisation - Command infos
 <a name="DefLogger+initSubCmd"></a>
 
 ### defLogger.initSubCmd(sub)
-Initialisation - SubCommand infos
+Initialization - SubCommand info
 
 **Kind**: instance method of [<code>DefLogger</code>](#DefLogger)  
 
@@ -172,7 +172,7 @@ Initialisation - SubCommand infos
 <a name="DefLogger+initEvent"></a>
 
 ### defLogger.initEvent(sub)
-Initialisation - SubCommand infos
+Initialization - SubCommand info
 
 **Kind**: instance method of [<code>DefLogger</code>](#DefLogger)  
 

@@ -7,23 +7,23 @@
 * [AxonUtils](#AxonUtils)
     * [new AxonUtils()](#new_AxonUtils_new)
     * _instance_
-        * [.triggerWebhook(type, embed, opt)](#AxonUtils+triggerWebhook)
-        * [.hasChannelPerms(channel, permissions, [user])](#AxonUtils+hasChannelPerms) ⇒ <code>Boolean</code>
-        * [.missingPerms(member, [permissions])](#AxonUtils+missingPerms) ⇒ <code>Array.&lt;String&gt;</code>
-        * [.hasPerms(member, permissions)](#AxonUtils+hasPerms) ⇒ <code>Boolean</code>
-        * [.isBotOwner(uID)](#AxonUtils+isBotOwner) ⇒ <code>Boolean</code>
-        * [.isBotAdmin(uID)](#AxonUtils+isBotAdmin) ⇒ <code>Boolean</code>
-        * [.isBotStaff(uID)](#AxonUtils+isBotStaff) ⇒ <code>Boolean</code>
-        * [.isAdmin(member)](#AxonUtils+isAdmin) ⇒ <code>Boolean</code>
-        * [.isMod(member, guildConf)](#AxonUtils+isMod) ⇒ <code>Boolean</code>
-        * [.sendMessage(channel, content, [options])](#AxonUtils+sendMessage) ⇒ <code>Promise.&lt;?Message&gt;</code>
-        * [.editMessage(message, content)](#AxonUtils+editMessage) ⇒ <code>Promise.&lt;?Message&gt;</code>
-        * [.sendDM(user, content, options)](#AxonUtils+sendDM) ⇒ <code>Promise.&lt;?Message&gt;</code>
-        * [.sendError(channel, content, options)](#AxonUtils+sendError) ⇒ <code>Promise.&lt;?Message&gt;</code>
-        * [.sendSuccess(channel, content, options)](#AxonUtils+sendSuccess) ⇒ <code>Promise.&lt;?Message&gt;</code>
-        * [.error(msg, err, type, errMsg)](#AxonUtils+error) ⇒ <code>Promise.&lt;?Message&gt;</code>
+        * [triggerWebhook(type, embed, opt)](#AxonUtils+triggerWebhook)
+        * [hasChannelPerms(channel, permissions, [user])](#AxonUtils+hasChannelPerms) ⇒ <code>Boolean</code>
+        * [missingPerms(member, [permissions])](#AxonUtils+missingPerms) ⇒ <code>Array.&lt;String&gt;</code>
+        * [hasPerms(member, permissions)](#AxonUtils+hasPerms) ⇒ <code>Boolean</code>
+        * [isBotOwner(uID)](#AxonUtils+isBotOwner) ⇒ <code>Boolean</code>
+        * [isBotAdmin(uID)](#AxonUtils+isBotAdmin) ⇒ <code>Boolean</code>
+        * [isBotStaff(uID)](#AxonUtils+isBotStaff) ⇒ <code>Boolean</code>
+        * [isAdmin(member)](#AxonUtils+isAdmin) ⇒ <code>Boolean</code>
+        * [isMod(member, guildConf)](#AxonUtils+isMod) ⇒ <code>Boolean</code>
+        * [sendMessage(channel, content, [options])](#AxonUtils+sendMessage) ⇒ <code>Promise.&lt;?Message&gt;</code>
+        * [editMessage(message, content)](#AxonUtils+editMessage) ⇒ <code>Promise.&lt;?Message&gt;</code>
+        * [sendDM(user, content, options)](#AxonUtils+sendDM) ⇒ <code>Promise.&lt;?Message&gt;</code>
+        * [sendError(channel, content, options)](#AxonUtils+sendError) ⇒ <code>Promise.&lt;?Message&gt;</code>
+        * [sendSuccess(channel, content, options)](#AxonUtils+sendSuccess) ⇒ <code>Promise.&lt;?Message&gt;</code>
+        * [error(msg, err, type, errMsg)](#AxonUtils+error) ⇒ <code>Promise.&lt;?Message&gt;</code>
     * _static_
-        * [.AxonUtils](#AxonUtils.AxonUtils)
+        * [AxonUtils](#AxonUtils.AxonUtils)
             * [new AxonUtils(axon)](#new_AxonUtils.AxonUtils_new)
 
 <a name="new_AxonUtils_new"></a>
@@ -33,15 +33,15 @@ Utility Class for AxonCore
 
 AxonClient Specific methods
 Internal uses + external
-All methods useful for internal uses or AxonClient specific
+All methods are useful for internal uses or for AxonClient specific purposes
 
 <a name="AxonUtils+triggerWebhook"></a>
 
 ### axonUtils.triggerWebhook(type, embed, opt)
-Triger an Axon Webhook
+Triggers an Axon Webhook
 Works directly with axon._configs._tokens [GETTER: axon.webhooks]
 
-**Kind**: instance method of [<code>AxonUtils</code>](#AxonUtils)  
+**Kind**: Instance method of [<code>AxonUtils</code>](#AxonUtils)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -52,9 +52,9 @@ Works directly with axon._configs._tokens [GETTER: axon.webhooks]
 <a name="AxonUtils+hasChannelPerms"></a>
 
 ### axonUtils.hasChannelPerms(channel, permissions, [user]) ⇒ <code>Boolean</code>
-Check if the user has correct perm in targeted channel
+Checks if the user has correct perm in targeted channel
 
-**Kind**: instance method of [<code>AxonUtils</code>](#AxonUtils)  
+**Kind**: Instance method of [<code>AxonUtils</code>](#AxonUtils)  
 **Returns**: <code>Boolean</code> - True if user has permissions / False if not  
 
 | Param | Type | Default | Description |
@@ -66,9 +66,9 @@ Check if the user has correct perm in targeted channel
 <a name="AxonUtils+missingPerms"></a>
 
 ### axonUtils.missingPerms(member, [permissions]) ⇒ <code>Array.&lt;String&gt;</code>
-List all missing perms for a user
+Lists all missing perms of a user
 
-**Kind**: instance method of [<code>AxonUtils</code>](#AxonUtils)  
+**Kind**: Instance method of [<code>AxonUtils</code>](#AxonUtils)  
 **Returns**: <code>Array.&lt;String&gt;</code> - An array of missing permissions  
 
 | Param | Type | Default | Description |
@@ -79,10 +79,10 @@ List all missing perms for a user
 <a name="AxonUtils+hasPerms"></a>
 
 ### axonUtils.hasPerms(member, permissions) ⇒ <code>Boolean</code>
-Check if the member has correct perm to execute
+Checks if the member has correct perm to execute something
 
-**Kind**: instance method of [<code>AxonUtils</code>](#AxonUtils)  
-**Returns**: <code>Boolean</code> - True if member has permissions / False if not  
+**Kind**: Instance method of [<code>AxonUtils</code>](#AxonUtils)  
+**Returns**: <code>Boolean</code> - True if member has permissions / False if otherwise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -92,9 +92,9 @@ Check if the member has correct perm to execute
 <a name="AxonUtils+isBotOwner"></a>
 
 ### axonUtils.isBotOwner(uID) ⇒ <code>Boolean</code>
-Check if the user is bot owner
+Checks if the user is the bot Owner
 
-**Kind**: instance method of [<code>AxonUtils</code>](#AxonUtils)  
+**Kind**: Instance method of [<code>AxonUtils</code>](#AxonUtils)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -103,9 +103,9 @@ Check if the user is bot owner
 <a name="AxonUtils+isBotAdmin"></a>
 
 ### axonUtils.isBotAdmin(uID) ⇒ <code>Boolean</code>
-Check if the user is bot admin
+Checks if the user is a bot Admin
 
-**Kind**: instance method of [<code>AxonUtils</code>](#AxonUtils)  
+**Kind**: Instance method of [<code>AxonUtils</code>](#AxonUtils)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -114,9 +114,9 @@ Check if the user is bot admin
 <a name="AxonUtils+isBotStaff"></a>
 
 ### axonUtils.isBotStaff(uID) ⇒ <code>Boolean</code>
-Check if the user is bot staff
+Checks if the user is a bot Staff
 
-**Kind**: instance method of [<code>AxonUtils</code>](#AxonUtils)  
+**Kind**: Instance method of [<code>AxonUtils</code>](#AxonUtils)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -125,10 +125,10 @@ Check if the user is bot staff
 <a name="AxonUtils+isAdmin"></a>
 
 ### axonUtils.isAdmin(member) ⇒ <code>Boolean</code>
-Check is the user is an Admin
+Checks is the user is an Admin
 
-**Kind**: instance method of [<code>AxonUtils</code>](#AxonUtils)  
-**Returns**: <code>Boolean</code> - True if admin / False if not  
+**Kind**: Instance method of [<code>AxonUtils</code>](#AxonUtils)  
+**Returns**: <code>Boolean</code> - True if they are an Admin / False if they are not  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -137,9 +137,9 @@ Check is the user is an Admin
 <a name="AxonUtils+isMod"></a>
 
 ### axonUtils.isMod(member, guildConf) ⇒ <code>Boolean</code>
-Check if the user is a mod or higher (admins are always mod)
+Check if the user is a Mod or higher (Admins are always Mods)
 
-**Kind**: instance method of [<code>AxonUtils</code>](#AxonUtils)  
+**Kind**: Instance method of [<code>AxonUtils</code>](#AxonUtils)  
 **Returns**: <code>Boolean</code> - True if user is a mod / False if not  
 
 | Param | Type | Description |
@@ -150,11 +150,11 @@ Check if the user is a mod or higher (admins are always mod)
 <a name="AxonUtils+sendMessage"></a>
 
 ### axonUtils.sendMessage(channel, content, [options]) ⇒ <code>Promise.&lt;?Message&gt;</code>
-Send a message.
-Check for bot permissions + message/embed length
-Doesn't support file
+Sends a message
+Checks for bot permissions + message / embed length
+Doesn't support files
 
-**Kind**: instance method of [<code>AxonUtils</code>](#AxonUtils)  
+**Kind**: Instance method of [<code>AxonUtils</code>](#AxonUtils)  
 **Returns**: <code>Promise.&lt;?Message&gt;</code> - Message Object  
 
 | Param | Type | Default | Description |
@@ -166,10 +166,10 @@ Doesn't support file
 <a name="AxonUtils+editMessage"></a>
 
 ### axonUtils.editMessage(message, content) ⇒ <code>Promise.&lt;?Message&gt;</code>
-Edit a message
-Check for bot permissions + message embed/length
+Edits a message
+Checks for bot permissions + message embed / length
 
-**Kind**: instance method of [<code>AxonUtils</code>](#AxonUtils)  
+**Kind**: Instance method of [<code>AxonUtils</code>](#AxonUtils)  
 **Returns**: <code>Promise.&lt;?Message&gt;</code> - Message Object  
 
 | Param | Type | Description |
@@ -180,10 +180,10 @@ Check for bot permissions + message embed/length
 <a name="AxonUtils+sendDM"></a>
 
 ### axonUtils.sendDM(user, content, options) ⇒ <code>Promise.&lt;?Message&gt;</code>
-DM targeted user if the bot is able to retrieve DM channel.
-Reject promise if not
+DMs targetted user if the bot is able to retrieve the DM channel of the targetted user.
+Rejects promise if not
 
-**Kind**: instance method of [<code>AxonUtils</code>](#AxonUtils)  
+**Kind**: Instance method of [<code>AxonUtils</code>](#AxonUtils)  
 **Returns**: <code>Promise.&lt;?Message&gt;</code> - Message Object  
 
 | Param | Type | Description |
@@ -195,10 +195,10 @@ Reject promise if not
 <a name="AxonUtils+sendError"></a>
 
 ### axonUtils.sendError(channel, content, options) ⇒ <code>Promise.&lt;?Message&gt;</code>
-Send an error message. Add the error emote to the content
-Check for sendMessage perms
+Sends an error message. Adds the error emote to the content
+Checks for sendMessage perms
 
-**Kind**: instance method of [<code>AxonUtils</code>](#AxonUtils)  
+**Kind**: Instance method of [<code>AxonUtils</code>](#AxonUtils)  
 **Returns**: <code>Promise.&lt;?Message&gt;</code> - Message Object  
 
 | Param | Type | Description |
@@ -210,10 +210,10 @@ Check for sendMessage perms
 <a name="AxonUtils+sendSuccess"></a>
 
 ### axonUtils.sendSuccess(channel, content, options) ⇒ <code>Promise.&lt;?Message&gt;</code>
-Send a success message. Add the success emote to the content
-Check for sendMessage perms
+Sends a success message. Adds the success emote to the content
+Checks for sendMessage perms
 
-**Kind**: instance method of [<code>AxonUtils</code>](#AxonUtils)  
+**Kind**: Instance method of [<code>AxonUtils</code>](#AxonUtils)  
 **Returns**: <code>Promise.&lt;?Message&gt;</code> - Message Object  
 
 | Param | Type | Description |
@@ -225,10 +225,10 @@ Check for sendMessage perms
 <a name="AxonUtils+error"></a>
 
 ### axonUtils.error(msg, err, type, errMsg) ⇒ <code>Promise.&lt;?Message&gt;</code>
-Handle errors (send error message/log)
-Call sendError
+Handles errors (send error message/log)
+Calls sendError
 
-**Kind**: instance method of [<code>AxonUtils</code>](#AxonUtils)  
+**Kind**: Instance method of [<code>AxonUtils</code>](#AxonUtils)  
 **Returns**: <code>Promise.&lt;?Message&gt;</code> - Message Object  
 
 | Param | Type | Description |
@@ -241,7 +241,7 @@ Call sendError
 <a name="AxonUtils.AxonUtils"></a>
 
 ### AxonUtils.AxonUtils
-**Kind**: static class of [<code>AxonUtils</code>](#AxonUtils)  
+**Kind**: Static class of [<code>AxonUtils</code>](#AxonUtils)  
 **Properties**
 
 | Name | Type | Description |
@@ -256,7 +256,7 @@ Call sendError
 <a name="new_AxonUtils.AxonUtils_new"></a>
 
 #### new AxonUtils(axon)
-Creates an instance of AxonUtils.
+Creates an Instance of AxonUtils.
 
 
 | Param | Type |

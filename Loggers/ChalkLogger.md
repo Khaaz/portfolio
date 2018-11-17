@@ -7,26 +7,25 @@
 
 * [ChalkLogger](#ChalkLogger) ⇐ <code>Console</code>
     * [new ChalkLogger()](#new_ChalkLogger_new)
-    * [.emerg(input, opt)](#ChalkLogger+emerg)
-    * [.error(input, opt)](#ChalkLogger+error)
-    * [.warn(input, opt)](#ChalkLogger+warn)
-    * [.debug(input, opt)](#ChalkLogger+debug)
-    * [.notice(input, opt)](#ChalkLogger+notice)
-    * [.info(input, opt)](#ChalkLogger+info)
-    * [.verbose(input, opt)](#ChalkLogger+verbose)
-    * [.axon(input)](#ChalkLogger+axon)
-    * [.init(input)](#ChalkLogger+init)
-    * [.initModule(module)](#ChalkLogger+initModule)
-    * [.initCommand(command)](#ChalkLogger+initCommand)
-    * [.initSubCmd(sub)](#ChalkLogger+initSubCmd)
-    * [.initEvent(sub)](#ChalkLogger+initEvent)
+    * [emerg(input, opt)](#ChalkLogger+emerg)
+    * [error(input, opt)](#ChalkLogger+error)
+    * [warn(input, opt)](#ChalkLogger+warn)
+    * [debug(input, opt)](#ChalkLogger+debug)
+    * [notice(input, opt)](#ChalkLogger+notice)
+    * [info(input, opt)](#ChalkLogger+info)
+    * [verbose(input, opt)](#ChalkLogger+verbose)
+    * [axon(input)](#ChalkLogger+axon)
+    * [init(input)](#ChalkLogger+init)
+    * [initModule(module)](#ChalkLogger+initModule)
+    * [initCommand(command)](#ChalkLogger+initCommand)
+    * [initSubCmd(sub)](#ChalkLogger+initSubCmd)
+    * [initEvent(sub)](#ChalkLogger+initEvent)
 
 <a name="new_ChalkLogger_new"></a>
 
 ### new ChalkLogger()
-Logger with time and custom method
-Colorful logger
-Allow clean logging with only Chalk
+A Colorful Logger that has time and custom method
+Allows clean logging with only Chalk
 
 <a name="ChalkLogger+emerg"></a>
 
@@ -81,7 +80,7 @@ Eval - Debugging logs
 <a name="ChalkLogger+notice"></a>
 
 ### chalkLogger.notice(input, opt)
-Important informations
+Important information
 
 **Kind**: instance method of [<code>ChalkLogger</code>](#ChalkLogger)  
 
@@ -93,7 +92,7 @@ Important informations
 <a name="ChalkLogger+info"></a>
 
 ### chalkLogger.info(input, opt)
-Default informations
+Default information
 
 **Kind**: instance method of [<code>ChalkLogger</code>](#ChalkLogger)  
 
@@ -129,7 +128,7 @@ AxonClient informations
 <a name="ChalkLogger+init"></a>
 
 ### chalkLogger.init(input)
-Initialisation - Client infos
+Initialization - Client info
 
 **Kind**: instance method of [<code>ChalkLogger</code>](#ChalkLogger)  
 
@@ -140,7 +139,7 @@ Initialisation - Client infos
 <a name="ChalkLogger+initModule"></a>
 
 ### chalkLogger.initModule(module)
-Initialisation - Module infos
+Initialization - Module info
 
 **Kind**: instance method of [<code>ChalkLogger</code>](#ChalkLogger)  
 
@@ -151,7 +150,7 @@ Initialisation - Module infos
 <a name="ChalkLogger+initCommand"></a>
 
 ### chalkLogger.initCommand(command)
-Initialisation - Command infos
+Initialization - Command info
 
 **Kind**: instance method of [<code>ChalkLogger</code>](#ChalkLogger)  
 
@@ -162,7 +161,7 @@ Initialisation - Command infos
 <a name="ChalkLogger+initSubCmd"></a>
 
 ### chalkLogger.initSubCmd(sub)
-Initialisation - SubCommand infos
+Initialization - SubCommand info
 
 **Kind**: instance method of [<code>ChalkLogger</code>](#ChalkLogger)  
 
@@ -173,7 +172,7 @@ Initialisation - SubCommand infos
 <a name="ChalkLogger+initEvent"></a>
 
 ### chalkLogger.initEvent(sub)
-Initialisation - SubCommand infos
+Initialization - SubCommand info
 
 **Kind**: instance method of [<code>ChalkLogger</code>](#ChalkLogger)  
 

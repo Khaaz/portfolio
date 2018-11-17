@@ -7,45 +7,42 @@
 
 * [Command](#Command) ⇐ <code>Base</code>
     * _instance_
-        * [.options](#Command+options)
-        * [.permissions](#Command+permissions)
-        * [.sendHelp({msg,)](#Command+sendHelp) ⇒ <code>Promise.&lt;Message&gt;</code>
-        * [.canExecute(msg, guildConf)](#Command+canExecute) ⇒ <code>Boolean</code>
-        * [.sendBotPerms(channel, [permissions])](#Command+sendBotPerms) ⇒ <code>Promise.&lt;?Message&gt;</code>
-        * [.sendUserPerms(channel, member, [permission])](#Command+sendUserPerms) ⇒ <code>Promise.&lt;?Message&gt;</code>
-        * [.sendDestPerms(channel)](#Command+sendDestPerms) ⇒ <code>Promise.&lt;?Message&gt;</code>
-        * [.sendCooldown(channel)](#Command+sendCooldown) ⇒ <code>Promise.&lt;?Message&gt;</code>
+        * [options](#Command+options)
+        * [permissions](#Command+permissions)
+        * [sendHelp({msg,)](#Command+sendHelp) ⇒ <code>Promise.&lt;Message&gt;</code>
+        * [canExecute(msg, guildConf)](#Command+canExecute) ⇒ <code>Boolean</code>
+        * [sendBotPerms(channel, [permissions])](#Command+sendBotPerms) ⇒ <code>Promise.&lt;?Message&gt;</code>
+        * [sendUserPerms(channel, member, [permission])](#Command+sendUserPerms) ⇒ <code>Promise.&lt;?Message&gt;</code>
+        * [sendDestPerms(channel)](#Command+sendDestPerms) ⇒ <code>Promise.&lt;?Message&gt;</code>
+        * [sendCooldown(channel)](#Command+sendCooldown) ⇒ <code>Promise.&lt;?Message&gt;</code>
     * _static_
-        * [.Command](#Command.Command)
+        * [Command](#Command.Command)
             * [new Command(module)](#new_Command.Command_new)
 
 <a name="Command+options"></a>
 
 ### command.options
-Commands options
-Default values
+Command options has default values
 
-**Kind**: instance property of [<code>Command</code>](#Command)  
+**Kind**: Instance property of [<code>Command</code>](#Command)  
 <a name="Command+permissions"></a>
 
 ### command.permissions
-Handle permissions
-bot perms
-user perms
+Handles permissions of both the bot and the user
 
 Optional posible override for:
- - users ID
- - roles ID
- - channels Id
+ - Users ID
+ - Roles ID
+ - Channels ID
 
 Bot Staff override
 
-custom function for special permission case
+Custom function for special permission case
 
-needed => needed to have all <NEEDED> permissions to execute the command
-bypass => needed to have one <BYPASS> permissions to execute the command (override needed as well)
+Needed => Need to have all <NEEDED> permissions to execute the command
+Bypass => Need to have one <BYPASS> permissions to execute the command (override needed as well)
 
-**Kind**: instance property of [<code>Command</code>](#Command)  
+**Kind**: Instance property of [<code>Command</code>](#Command)  
 
 <a name="Command+sendHelp"></a>
 
@@ -54,7 +51,7 @@ Send Help message in the current channel
 Perm checks were done before
 Call custom sendHelp (Client method if it exist instead of default one)
 
-**Kind**: instance method of [<code>Command</code>](#Command)  
+**Kind**: Instance method of [<code>Command</code>](#Command)  
 **Returns**: <code>Promise.&lt;Message&gt;</code> - Message Object  
 
 | Param | Type | Description |
@@ -64,12 +61,11 @@ Call custom sendHelp (Client method if it exist instead of default one)
 <a name="Command+canExecute"></a>
 
 ### command.canExecute(msg, guildConf) ⇒ <code>Boolean</code>
-Permission checker - Does the user has perm to exec command/not
-Bypass - one of the perms (override) => doesn't go through others chercker
-Needed - all perms => still go through other checkers
-ServerMod
+Permission verifier - Checks whether the user has perms to execute the command or not
+Bypass - One of the perms (override) => doesn't go through other verifiers
+Needed - All perms => still go through other checkers
 
-**Kind**: instance method of [<code>Command</code>](#Command)  
+**Kind**: Instance method of [<code>Command</code>](#Command)  
 **Returns**: <code>Boolean</code> - True if the user can execute command / False if not  
 
 | Param | Type | Description |
@@ -80,10 +76,10 @@ ServerMod
 <a name="Command+sendBotPerms"></a>
 
 ### command.sendBotPerms(channel, [permissions]) ⇒ <code>Promise.&lt;?Message&gt;</code>
-Send an error message for invalid Bot permissions
-timeout // delay and auto delete message
+Sends an error message for invalid Bot permissions
+Timeouts / delays and auto delete message
 
-**Kind**: instance method of [<code>Command</code>](#Command)  
+**Kind**: Instance method of [<code>Command</code>](#Command)  
 **Returns**: <code>Promise.&lt;?Message&gt;</code> - Message Object  
 
 | Param | Type | Default | Description |
@@ -94,10 +90,10 @@ timeout // delay and auto delete message
 <a name="Command+sendUserPerms"></a>
 
 ### command.sendUserPerms(channel, member, [permission]) ⇒ <code>Promise.&lt;?Message&gt;</code>
-Send an error message for Source user permissions
-timeout // delay and auto delete message
+Sends an error message for Source user permissions
+Timeouts / delays and auto delete message
 
-**Kind**: instance method of [<code>Command</code>](#Command)  
+**Kind**: Instance method of [<code>Command</code>](#Command)  
 **Returns**: <code>Promise.&lt;?Message&gt;</code> - Message Object  
 
 | Param | Type | Default | Description |
@@ -109,10 +105,10 @@ timeout // delay and auto delete message
 <a name="Command+sendDestPerms"></a>
 
 ### command.sendDestPerms(channel) ⇒ <code>Promise.&lt;?Message&gt;</code>
-Send an error message for Destination user permissions
-timeout // delay and auto delete message
+Sends an error message for Destination user permissions
+Timeouts / delays and auto delete message
 
-**Kind**: instance method of [<code>Command</code>](#Command)  
+**Kind**: Instance method of [<code>Command</code>](#Command)  
 **Returns**: <code>Promise.&lt;?Message&gt;</code> - Message Object  
 
 | Param | Type | Description |
@@ -122,10 +118,10 @@ timeout // delay and auto delete message
 <a name="Command+sendCooldown"></a>
 
 ### command.sendCooldown(channel) ⇒ <code>Promise.&lt;?Message&gt;</code>
-Send an error message for invalid cooldown
-timeout // delay and auto delete message
+Sends an error message for invalid cooldown
+Timeout / delays and auto delete message
 
-**Kind**: instance method of [<code>Command</code>](#Command)  
+**Kind**: Instance method of [<code>Command</code>](#Command)  
 **Returns**: <code>Promise.&lt;?Message&gt;</code> - Message Object  
 
 | Param | Type | Description |
@@ -135,7 +131,7 @@ timeout // delay and auto delete message
 <a name="Command.Command"></a>
 
 ### Command.Command
-**Kind**: static class of [<code>Command</code>](#Command)  
+**Kind**: Static class of [<code>Command</code>](#Command)  
 **Properties**
 
 | Name | Type | Default | Description |
@@ -191,7 +187,7 @@ timeout // delay and auto delete message
 <a name="new_Command.Command_new"></a>
 
 #### new Command(module)
-Creates an instance of Command.
+Creates an Instance of Command.
 
 
 | Param | Type |

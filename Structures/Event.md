@@ -7,17 +7,17 @@
 
 * [Event](#Event) ⇐ <code>Base</code>
     * _instance_
-        * [._execute(guildConf, ...args)](#Event+_execute) ⇒ <code>Promise</code>
+        * [_execute(guildConf, ...args)](#Event+_execute) ⇒ <code>Promise</code>
     * _static_
-        * [.Event](#Event.Event)
+        * [Event](#Event.Event)
             * [new Event(module)](#new_Event.Event_new)
 
 <a name="Event+_execute"></a>
 
 ### event.\_execute(guildConf, ...args) ⇒ <code>Promise</code>
-Promisify the return execute return to prevent promise issue
+Promisifies the return value after execution of the event handler to prevent promise issues
 
-**Kind**: instance method of [<code>Event</code>](#Event)  
+**Kind**: Instance method of [<code>Event</code>](#Event)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -50,7 +50,7 @@ Promisify the return execute return to prevent promise issue
 <a name="new_Event.Event_new"></a>
 
 #### new Event(module)
-Creates an instance of Event.
+Creates an Instance of Event.
 
 
 | Param | Type |
