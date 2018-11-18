@@ -1,4 +1,8 @@
 
+.app-name {
+  width: 50%
+}
+
 /* Override vue/dark css themes so it's all the same color within markdown tab */
 .markdown-section p.tip,.markdown-section tr:nth-child(2n) {
   background-color: inherit;

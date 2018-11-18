@@ -1,7 +1,7 @@
 <div align="center">
   <br />
   <p>
-    <a href="https://khaazz.github.io"><img src="_image/banner.png" width="546" alt="AxonCore" /></a>
+    <a href="https://khaazz.github.io"><img src="_images/AxonCoreBanner.png" width="546" alt="AxonCore" /></a>
   </p>
   <br />
   <p>
@@ -22,7 +22,7 @@
 - This framework will be simple to setup, simple to use, and allows high customizability and efficiency.  
 - This framework is built to use a DataBase for utilizing all of its functionality. It natively supports MongoDB, but it is possible to use an alternate JSON DataBase if necessary.
 
-## Features:
+### Features:
 
   - **Client**: Separates the Eris client and the main client that caches Modules, guildConfigs, DB schemas, etc...
   - **Modular**: A module that could host its own commands and events.
@@ -35,7 +35,7 @@
   - **Logging**: Colorful custom logging.
   - **Customizable**: Customize error messages easily, help command, bot staff, etc... 
 
-## Documentation:
+### Documentation:
 All the documentation and instructions on how to set it up can be found [here](https://khaazz.github.io/#/).  
 We also have a discord server where we provide eventual support or discuss about development. Join [here](https://discord.gg/QZ6B5US).
 
