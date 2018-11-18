@@ -46,7 +46,7 @@ Bypass => Need to have one <BYPASS> permissions to execute the command (override
 
 <a name="Command+sendHelp"></a>
 
-### command.sendHelp({msg,) ⇒ <code>Promise.&lt;Message&gt;</code>
+### sendHelp({msg,) ⇒ <code>Promise.&lt;Message&gt;</code>
 Send Help message in the current channel
 Perm checks were done before
 Call custom sendHelp (Client method if it exist instead of default one)

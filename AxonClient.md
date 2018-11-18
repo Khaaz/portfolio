@@ -1,7 +1,7 @@
 <a name="AxonClient"></a>
 
 ## AxonClient ⇐ <code>EventEmitter</code>
-**Kind**: global class  
+**Kind**: Global class  
 **Extends**: <code>EventEmitter</code>  
 **Author**: KhaaZ  
 
