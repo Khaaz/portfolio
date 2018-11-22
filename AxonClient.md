@@ -10,10 +10,13 @@
     * [AxonClient](#AxonClient.AxonClient)
         * [new AxonClient(token, options, axonOptions, modules)](#new_AxonClient.AxonClient_new)
     * _instance_
+        * [initStaff()](#AxonClient+initStaff)
+        * [initErrorListeners()](#AxonClient+initErrorListeners)
+        * [initStatus()](#AxonClient+initStatus)
+        * [init()](#AxonClient+init) ⇒ <code>Promise</code>
         * [start()](#AxonClient+start)
         * [registerModule(module)](#AxonClient+registerModule)
         * [unregisterModule(label)](#AxonClient+unregisterModule)
-        * [initStatus()](#AxonClient+initStatus)
         * [sendFullHelp(msg)](#AxonClient+sendFullHelp) ⇒ <code>Promise.&lt;Message&gt;</code>
         * [fetchAxonConf()](#AxonClient+fetchAxonConf) ⇒ <code>Promise.&lt;Object&gt;</code>
         * [fetchGuildConf(gID)](#AxonClient+fetchGuildConf) ⇒ <code>Promise.&lt;Object&gt;</code>
@@ -81,6 +84,39 @@ Creates an Instance of AxonClient.
 | axonOptions | <code>Object</code> | Axon options |
 | modules | <code>Object</code> | Object with all modules to add in the bot |
 
+<a name="AxonClient+initStaff"></a>
+
+### initStaff()
+Initialise Custom Bot Staff.
+This method need to be overridden in child.
+
+**Kind**: instance method of [<code>AxonClient</code>](#AxonClient) 
+
+<a name="AxonClient+initErrorListeners"></a>
+
+### initErrorListeners()
+Initialize error listeners and webhooks.
+This method can be overriden in child.
+
+**Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
+
+<a name="AxonClient+initStatus"></a>
+
+### initStatus()
+Initalizes the bot status.  
+Default method. Can be overridden by initStatus in child.
+
+**Kind**: Instance method of [<code>AxonClient</code>](#AxonClient)  
+
+<a name="AxonClient+init"></a>
+
+### init() ⇒ <code>Promise</code>
+Custom init method.
+This method need to be overridden in child.
+
+**Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
+
+<a name="AxonClient+start"></a>
 
 ### start()
 START METHOD  
@@ -112,14 +148,6 @@ Remove the module of the client, also removing commands, aliases, events, schema
 | Param | Type | Description |
 | --- | --- | --- |
 | label | <code>String</code> | Label of the module to unregister |
-
-<a name="AxonClient+initStatus"></a>
-
-### initStatus()
-Initalizes the bot status.  
-Default method. Can be overridden by initStatus in child.
-
-**Kind**: Instance method of [<code>AxonClient</code>](#AxonClient)  
 
 <a name="AxonClient+sendFullHelp"></a>
 
