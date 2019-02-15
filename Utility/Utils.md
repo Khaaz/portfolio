@@ -1,137 +1,33 @@
-<a name="Utils"></a>
+<a id="utils"></a>
 
 ## Utils
+General Utility Class for AxonCore.  
+All methods useful and usable everywhere.
+
 **Kind**: global class  
 **Author**: KhaaZ  
 
-* [Utils](#Utils)
-    * [new Utils()](#new_Utils_new)
-    * _instance_
-        * [splitMessage(content)](#Utils+splitMessage) ⇒ <code>Array.&lt;String&gt;</code> \| <code>String</code>
-        * [getPrefix(msg)](#Utils+getPrefix) ⇒ <code>String</code>
-        * [getRoles(guild, member)](#Utils+getRoles) ⇒ <code>Array.&lt;Role&gt;</code>
-        * [getHighestRole(guild, member)](#Utils+getHighestRole) ⇒ <code>Object.&lt;Role&gt;</code>
-        * [sortRoles(array)](#Utils+sortRoles) ⇒ <code>Array.&lt;Role&gt;</code>
-        * [isRoleHigher(role1, role2)](#Utils+isRoleHigher) ⇒ <code>Boolean</code>
-        * [isHigherRole(guild, first, second)](#Utils+isHigherRole) ⇒ <code>Boolean</code>
-        * [compareObject(obj1, obj2)](#Utils+compareObject) ⇒ <code>Boolean</code>
-    * _static_
-        * [Utils](#Utils.Utils)
-            * [new Utils()](#new_Utils.Utils_new)
+[Utils](#Utils)
+- _static_
+  - [Utils](#Utils)
+    - [new Utils()](#Utils_new)
+- _instance_
+  - [splitMessage(content)](#splitMessage) ⇒ <code>Array.&lt;String&gt;</code> \| <code>String</code>
+  - [getPrefix(msg)](#getPrefix) ⇒ <code>String</code>
+  - [getRoles(guild, member)](#getRoles) ⇒ <code>Array.&lt;Role&gt;</code>
+  - [getHighestRole(guild, member)](#getHighestRole) ⇒ <code>Object.&lt;Role&gt;</code>
+  - [sortRoles(array)](#sortRoles) ⇒ <code>Array.&lt;Role&gt;</code>
+  - [isRoleHigher(role1, role2)](#isRoleHigher) ⇒ <code>Boolean</code>
+  - [isHigherRole(guild, first, second)](#isHigherRole) ⇒ <code>Boolean</code>
+  - [readFile(path)](#readFile) ⇒ <code>Promise.&lt;String&gt;</code>
+  - [writeFile(path, content)](#writeFile) ⇒ <code>Promise</code>
+  - [compareObject(obj1, obj2)](#compareObject) ⇒ <code>Boolean</code>
+    
 
-<a name="new_Utils_new"></a>
+<<a id="utils"></a>
 
-### new Utils()
-General Utility Class for AxonCore
-
-All methods useful and usable everywhere
-
-<a name="Utils+splitMessage"></a>
-
-### utils.splitMessage(content) ⇒ <code>Array.&lt;String&gt;</code> \| <code>String</code>
-Splits a content (String), according to correct linebreaks.
-split at 1900 char
-
-**Kind**: Instance method of [<code>Utils</code>](#Utils)  
-**Returns**: <code>Array.&lt;String&gt;</code> \| <code>String</code> - The array of content string splitted or the original String  
-
-| Param | Type |
-| --- | --- |
-| content | <code>String</code> | 
-
-<a name="Utils+getPrefix"></a>
-
-### utils.getPrefix(msg) ⇒ <code>String</code>
-Returns the guild prefix of the given msg.
-
-**Kind**: Instance method of [<code>Utils</code>](#Utils)  
-**Returns**: <code>String</code> - The prefix as string.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| msg | <code>Object</code> | Message object given at the command. |
-
-<a name="Utils+getRoles"></a>
-
-### utils.getRoles(guild, member) ⇒ <code>Array.&lt;Role&gt;</code>
-Gets an Array of role Object that the member has
-
-**Kind**: Instance method of [<code>Utils</code>](#Utils)  
-**Returns**: <code>Array.&lt;Role&gt;</code> - Array of roles object  
-
-| Param | Type |
-| --- | --- |
-| guild | <code>Object.&lt;Guild&gt;</code> | 
-| member | <code>Object.&lt;Member&gt;</code> | 
-
-<a name="Utils+getHighestRole"></a>
-
-### utils.getHighestRole(guild, member) ⇒ <code>Object.&lt;Role&gt;</code>
-Gets the highest role of a member
-
-**Kind**: Instance method of [<code>Utils</code>](#Utils)  
-**Returns**: <code>Object.&lt;Role&gt;</code> - Role Object  
-
-| Param | Type |
-| --- | --- |
-| guild | <code>Object.&lt;Guild&gt;</code> | 
-| member | <code>Object.&lt;Member&gt;</code> | 
-
-<a name="Utils+sortRoles"></a>
-
-### utils.sortRoles(array) ⇒ <code>Array.&lt;Role&gt;</code>
-Sorts a users roles from the higher role to the lower role
-
-**Kind**: Instance method of [<code>Utils</code>](#Utils)  
-**Returns**: <code>Array.&lt;Role&gt;</code> - Sorted array (per position) of Role Object  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| array | <code>Array.&lt;Role&gt;</code> | The roles to sort |
-
-<a name="Utils+isRoleHigher"></a>
-
-### utils.isRoleHigher(role1, role2) ⇒ <code>Boolean</code>
-Checks if a role is higher than the other
-
-**Kind**: Instance method of [<code>Utils</code>](#Utils)  
-
-| Param | Type |
-| --- | --- |
-| role1 | <code>Object.&lt;Role&gt;</code> | 
-| role2 | <code>Object.&lt;Role&gt;</code> | 
-
-<a name="Utils+isHigherRole"></a>
-
-### utils.isHigherRole(guild, first, second) ⇒ <code>Boolean</code>
-Checks if the higher role of member1 is higher than higher role of member2
-
-**Kind**: Instance method of [<code>Utils</code>](#Utils)  
-
-| Param | Type |
-| --- | --- |
-| guild | <code>Object.&lt;Guild&gt;</code> | 
-| first | <code>Object.&lt;Member&gt;</code> | 
-| second | <code>Object.&lt;Member&gt;</code> | 
-  
-<a name="Utils+compareObject"></a>
-
-### utils.compareObject(obj1, obj2) ⇒ <code>Boolean</code>
-Ensures that all property names of obj1 exists in obj2.
-Doesn't compare values. Exept if it is an object, then it check for property names recursively
-
-**Kind**: Instance method of [<code>Utils</code>](#Utils)  
-**Returns**: <code>Boolean</code> - True: obj2 has at least all prop of obj1  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| obj1 | <code>Object</code> | Default config/object |
-| obj2 | <code>Object</code> | Custom config/Object (Config/Object to compare with) |
-
-<a name="Utils.Utils"></a>
-
-### Utils.Utils
-**Kind**: Static class of [<code>Utils</code>](#Utils)  
+### Utils
+**Kind**: static class of [<code>Utils</code>](#Utils)  
 **Properties**
 
 | Name | Type | Description |
@@ -144,8 +40,133 @@ Doesn't compare values. Exept if it is an object, then it check for property nam
 | id | <code>RegExp</code> | Regular Expression to match an id |
 | hexCode | <code>RegExp</code> | Regular Expression to match an hexCode |
 
-<a name="new_Utils.Utils_new"></a>
+<a id="utils_new"></a>
 
 #### new Utils()
-Creates an Instance of Utils.
+Creates an Utils instance.
 
+<a id="splitmessage"></a>
+
+### splitMessage(content) ⇒ <code>Array.&lt;String&gt;</code> \| <code>String</code>
+Split the given content (String), according to correct linebreaks.
+Split at 1900 characters.
+
+**Kind**: instance method of [<code>Utils</code>](#Utils)  
+**Returns**: <code>Array.&lt;String&gt;</code> \| <code>String</code> - The array of content string splitted or the original String  
+
+| Param | Type |
+| --- | --- |
+| content | <code>String</code> | 
+
+<a id="getprefix"></a>
+
+### getPrefix(msg) ⇒ <code>String</code>
+Returns the guild prefix of the given message object.  
+
+**Kind**: instance method of [<code>Utils</code>](#Utils)  
+**Returns**: <code>String</code> - The prefix as string.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| msg | <code>Object</code> | Message object given at the command. |
+
+<a id="getroles"></a>
+
+### getRoles(guild, member) ⇒ <code>Array.&lt;Role&gt;</code>
+Get an array of role objects from a member.  
+
+**Kind**: instance method of [<code>Utils</code>](#Utils)  
+**Returns**: <code>Array.&lt;Role&gt;</code> - Array of roles object  
+
+| Param | Type |
+| --- | --- |
+| guild | <code>Object.&lt;Guild&gt;</code> | 
+| member | <code>Object.&lt;Member&gt;</code> | 
+
+<a id="gethighestrole"></a>
+
+### getHighestRole(guild, member) ⇒ <code>Object.&lt;Role&gt;</code>
+Get highest role of the given member.  
+
+**Kind**: instance method of [<code>Utils</code>](#Utils)  
+**Returns**: <code>Object.&lt;Role&gt;</code> - Role Object  
+
+| Param | Type |
+| --- | --- |
+| guild | <code>Object.&lt;Guild&gt;</code> | 
+| member | <code>Object.&lt;Member&gt;</code> | 
+
+<a id="sortroles"></a>
+
+### sortRoles(array) ⇒ <code>Array.&lt;Role&gt;</code>
+Sort a users roles from highest role to lowest role.  
+
+**Kind**: instance method of [<code>Utils</code>](#Utils)  
+**Returns**: <code>Array.&lt;Role&gt;</code> - Sorted array (per position) of Role Object  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| array | <code>Array.&lt;Role&gt;</code> | The roles to sort |
+
+<a id="isrolehigher"></a>
+
+### isRoleHigher(role1, role2) ⇒ <code>Boolean</code>
+Check if the first role is higher than the second role.  
+
+**Kind**: instance method of [<code>Utils</code>](#Utils)  
+
+| Param | Type |
+| --- | --- |
+| role1 | <code>Object.&lt;Role&gt;</code> | 
+| role2 | <code>Object.&lt;Role&gt;</code> | 
+
+<a id="ishigherrole"></a>
+
+### isHigherRole(guild, first, second) ⇒ <code>Boolean</code>
+Check if the highest role of the first user is higher than the highest role of the second user.  
+
+**Kind**: instance method of [<code>Utils</code>](#Utils)  
+
+| Param | Type |
+| --- | --- |
+| guild | <code>Object.&lt;Guild&gt;</code> | 
+| first | <code>Object.&lt;Member&gt;</code> | 
+| second | <code>Object.&lt;Member&gt;</code> | 
+
+<a id="readfile"></a>
+
+### readfile(path) ⇒ <code>Promise.&lt;String&gt;</code>
+Promisified fs.readFile method.  
+
+**Kind**: instance method of [<code>Utils</code>](#Utils)  
+**Returns**: <code>Promise.&lt;String&gt;</code> - content  
+
+| Param | Type |
+| --- | --- |
+| path | <code>String</code> | 
+
+<a id="writefile"></a>
+
+### writeFile(path, content) ⇒ <code>Promise</code>
+Promisified fs.writeFile method.  
+
+**Kind**: instance method of [<code>Utils</code>](#Utils)  
+
+| Param | Type |
+| --- | --- |
+| path | <code>String</code> | 
+| content | <code>String</code> | 
+
+<a id="compareobject"></a>
+
+### compareObject(obj1, obj2) ⇒ <code>Boolean</code>
+Ensures that all property names of obj1 exists in obj2.  
+Doesn't compare values. Exept if it is an object, then it checks for property names recursively.  
+
+**Kind**: instance method of [<code>Utils</code>](#Utils)  
+**Returns**: <code>Boolean</code> - True: obj2 has at least all prop of obj1  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| obj1 | <code>Object</code> | Default config/object |
+| obj2 | <code>Object</code> | Custom config/Object (Config/Object to compare with) |

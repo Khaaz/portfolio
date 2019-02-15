@@ -1,46 +1,41 @@
-<a name="AxonClient"></a>
+<a id="axonclient"></a>
 
 ## AxonClient ⇐ <code>EventEmitter</code>
 **Kind**: Global class  
 **Extends**: <code>EventEmitter</code>  
 **Author**: KhaaZ  
 
-* [AxonClient](#AxonClient) ⇐ <code>EventEmitter</code>
-* _static_
-    * [AxonClient](#AxonClient.AxonClient)
-        * [new AxonClient(token, options, axonOptions, modules)](#new_AxonClient.AxonClient_new)
-    * _instance_
-        * [initStaff()](#AxonClient+initStaff)
-        * [initErrorListeners()](#AxonClient+initErrorListeners)
-        * [initStatus()](#AxonClient+initStatus)
-        * [init()](#AxonClient+init) ⇒ <code>Promise</code>
-        * [start()](#AxonClient+start)
-        * [registerModule(module)](#AxonClient+registerModule)
-        * [unregisterModule(label)](#AxonClient+unregisterModule)
-        * [sendFullHelp(msg)](#AxonClient+sendFullHelp) ⇒ <code>Promise.&lt;Message&gt;</code>
-        * [fetchAxonConf()](#AxonClient+fetchAxonConf) ⇒ <code>Promise.&lt;Object&gt;</code>
-        * [fetchGuildConf(gID)](#AxonClient+fetchGuildConf) ⇒ <code>Promise.&lt;Object&gt;</code>
-        * [resolvePrefix(msg)](#AxonClient+resolvePrefix) ⇒ <code>String</code>
-        * [resolveCommand(label, args, guildConf)](#AxonClient+resolveCommand) ⇒ <code>Object</code>
-        * [getModule(label)](#AxonClient+getModule) ⇒ <code>Object</code>
-        * [getCommand(label)](#AxonClient+getCommand) ⇒ <code>Object</code>
-        * [getGuildConf(gID)](#AxonClient+getGuildConf) ⇒ <code>Promise.&lt;Object&gt;</code>
-        * [updateGuildConf(gID, guildSchema)](#AxonClient+updateGuildConf) ⇒ <code>Promise.&lt;Object&gt;</code>
-        * [registerGuildPrefix(gID, prefixArr)](#AxonClient+registerGuildPrefix) ⇒ <code>Promise.&lt;Object&gt;</code>
-        * [updateBlacklistUser(userID, [boolean])](#AxonClient+updateBlacklistUser) ⇒ <code>Promise.&lt;Object&gt;</code>
-        * [updateBlacklistGuild(guildID, [boolean])](#AxonClient+updateBlacklistGuild) ⇒ <code>Promise.&lt;Object&gt;</code>
-        * [updateGuildStateModule(guildID, label, [boolean])](#AxonClient+updateGuildStateModule) ⇒ <code>Promise.&lt;Object&gt;</code>
-        * [updateGuildStateCommand(guildID, label, [boolean])](#AxonClient+updateGuildStateCommand) ⇒ <code>Promise.&lt;Object&gt;</code>
-        * [updateGuildStateEvent(guildID, label, [boolean])](#AxonClient+updateGuildStateEvent) ⇒ <code>Promise.&lt;Object&gt;</code>
-        * [updateGlobalStateModule(module, [state])](#AxonClient+updateGlobalStateModule)
-        * [updateGlobalStateCommand(command, [state])](#AxonClient+updateGlobalStateCommand)
-        * [toString()](#AxonClient+toString) ⇒ <code>String</code>
-        * [toJSON()](#AxonClient+toJSON) ⇒ <code>Object</code>
+[AxonClient](#AxonClient) ⇐ <code>EventEmitter</code>
+- _static_
+  - [AxonClient](#AxonClient)
+    - [new AxonClient(ErisClient, [axonOptions], [modules])](#AxonClient_new)
+- _instance_
+  - [initStaff()](#initStaff)
+  - [initErrorListeners()](#initErrorListeners)
+  - [initStatus()](#initStatus)
+  - [init()](#init) ⇒ <code>Promise</code>
+  - [start()](#start)
+  - [registerModule(module)](#registerModule)
+  - [unregisterModule(label)](#unregisterModule)
+  - [sendFullHelp(msg)](#sendFullHelp) ⇒ <code>Promise.&lt;Message&gt;</code>
+  - [fetchAxonConf()](#fetchAxonConf) ⇒ <code>Promise.&lt;Object&gt;</code>
+  - [fetchGuildConf(gID)](#fetchGuildConf) ⇒ <code>Promise.&lt;Object&gt;</code>
+  - [resolvePrefix(msg)](#resolvePrefix) ⇒ <code>String</code>
+  - [resolveCommand(label, args, [guildConf])](#resolveCommand) ⇒ <code>Object</code>
+  - [getModule(label)](#getmodulelabel) ⇒ <code>Object</code>
+  - [getCommand(label)](#getcommandlabel) ⇒ <code>Object</code>
+  - [getListeners(eventName)](#getListeners) ⇒ <code>Array</code>
+  - [getGuildConf(gID)](#getGuildConf) ⇒ <code>Promise.&lt;Object&gt;</code>
+  - [updateGuildConf(gID, guildSchema)](#updateGuildConf) ⇒ <code>Promise.&lt;Object&gt;</code>
+  - [registerGuildPrefix(gID, prefixArr)](#registerGuildPrefix) ⇒ <code>Promise.&lt;Object&gt;</code>
+  - [toString()](#toString) ⇒ <code>String</code>
+  - [toJSON()](#toJSON) ⇒ <code>Object</code>
+  - [inspect()](#inspect) ⇒ <code>Object</code>]
 
-<a name="AxonClient.AxonClient"></a>
+<a id="axonclient"></a>
 
-### AxonClient.AxonClient
-**Kind**: Static class of [<code>AxonClient</code>](#AxonClient)  
+### AxonClient
+**Kind**: static class of [<code>AxonClient</code>](#AxonClient)  
 **Properties**
 
 | Name | Type | Description |
@@ -49,50 +44,58 @@
 | modules | <code>Collection.&lt;Module&gt;</code> | All modules in the client [key: label, value: module] |
 | commands | <code>Collection.&lt;Command&gt;</code> | All commands in the client [key: label, value: command] |
 | commandAliases | <code>Map.&lt;String&gt;</code> | All aliases in the client [key: alias, value: commandLabel] |
-| events | <code>Collection.&lt;Event&gt;</code> | All events in the client [key: label, value: event] |
+| events | <code>Collection.&lt;Event&gt;</code> | All Eris events listened by the client [key: label, value: event] |
 | schemas | <code>Collection.&lt;Object&gt;</code> | All schemas in client (global models) [key: schemaLabel, value: schema] |
 | guildConfigs | <code>Collection.&lt;Object&gt;</code> | Guild configs [key: guildID, value: { guildConfig }] |
+| eventManager | <code>Object.&lt;EventManager&gt;</code> | The EventManager instance that handle all AxonCore events |
 | Logger | <code>Object</code> | Default Logger / Chalk Logger / Signale Logger |
 | DBprovider | <code>Object</code> | JSON(default) / Mongoose |
 | AxonUtil | <code>Object</code> | Util methods (Axon) |
-| Resolver | <code>Object</code> | Resolver |
 | Utils | <code>Object</code> | Utils methods (general) |
 | configs | <code>Object</code> | configs (axon, template, _tokens) [GETTER: _configs] |
 | blacklistedUsers | <code>Set.&lt;String&gt;</code> | Cached blacklisted users |
 | blacklistedGuilds | <code>Set.&lt;String&gt;</code> | Cached blacklisted guilds |
 | staff | <code>Object</code> | Object of bot staff (user IDs) (owners, admins, ..+) |
-| params | <code>Object</code> | Bot params |
+| params | <code>Object</code> | Bot parameters |
 | params.debugMode | <code>Boolean</code> | Enable to show commands latency |
 | params.prefix | <code>Array</code> | Default bot prefix |
 | params.ownerPrefix | <code>String</code> | Owner prefix : override perms/cd |
-| params.adminPrefix | <code>String</code> | Admins prefix : override perms/cd except Owner |
+| params.adminPrefix | <code>String</code> | Admins prefix : override perms/cd except Owner only commands |
 | infos | <code>Object</code> | General infos { name, description, version, library, owners } |
 | axonInfos | <code>Object</code> | AxonClient infos { name, version, author, github } |
 | webhooks | <code>Object</code> | All Client webhooks [GETTER: _configs._tokens.webhooks] |
 | template | <code>Object</code> | Template options [GETTER: _configs.template] |
 
-<a name="new_AxonClient.AxonClient_new"></a>
+<a id="axonclient_new"></a>
 
-#### new AxonClient(token, options, axonOptions, modules)
-Creates an Instance of AxonClient.
+#### new AxonClient(ErisClient, [axonOptions], [modules])
+Creates an AxonClient instance.
 
 
-| Param | Type | Description |
-| --- | --- | --- |
-| token | <code>String</code> |  |
-| options | <code>Object</code> | Eris options |
-| axonOptions | <code>Object</code> | Axon options |
-| modules | <code>Object</code> | Object with all modules to add in the bot |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| ErisClient | <code>Object.&lt;Eris.Client&gt;</code> |  | Eris Client instance |
+| [axonOptions] | <code>Object</code> | <code>{}</code> | Axon options |
+| [axonOptions.axonConf] | <code>Object</code> |  | General Axon config |
+| [axonOptions.templateConf] | <code>Object</code> |  | Template config |
+| [axonOptions.tokenConf] | <code>Object</code> |  | Token config |
+| [axonOptions.utils] | <code>Object.&lt;Utils&gt;</code> |  | Utils class, needs to be an instance of AxonCore.Utils |
+| [axonOptions.logger] | <code>Object</code> |  | Custom logger |
+| [axonOptions.db] | <code>Object</code> |  | DB Service. Needs to be an instance of DB Service |
+| [axonOptions.axonSchema] | <code>Object</code> |  | Custom AxonSchema |
+| [axonOptions.guildSchema] | <code>Object</code> |  | Custom GuildSchema |
+| [modules] | <code>Object</code> | <code>{}</code> | Object with all modules to add in the bot |
 
-<a name="AxonClient+initStaff"></a>
+
+<a id="initstaff"></a>
 
 ### initStaff()
 Initialise Custom Bot Staff.
-This method need to be overridden in child.
+This method can be overridden in child.
 
 **Kind**: instance method of [<code>AxonClient</code>](#AxonClient) 
 
-<a name="AxonClient+initErrorListeners"></a>
+<a id="initerrorlisteners"></a>
 
 ### initErrorListeners()
 Initialize error listeners and webhooks.
@@ -100,7 +103,7 @@ This method can be overriden in child.
 
 **Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
 
-<a name="AxonClient+initStatus"></a>
+<a id="initstatus"></a>
 
 ### initStatus()
 Initalizes the bot status.  
@@ -108,7 +111,7 @@ Default method. Can be overridden by initStatus in child.
 
 **Kind**: Instance method of [<code>AxonClient</code>](#AxonClient)  
 
-<a name="AxonClient+init"></a>
+<a id="init"></a>
 
 ### init() ⇒ <code>Promise</code>
 Custom init method.
@@ -116,7 +119,7 @@ This method need to be overridden in child.
 
 **Kind**: instance method of [<code>AxonClient</code>](#AxonClient)  
 
-<a name="AxonClient+start"></a>
+<a id="start"></a>
 
 ### start()
 START METHOD  
@@ -125,7 +128,7 @@ Connect the bot to discord, initialize all modules and events, create default er
 
 **Kind**: Instance method of [<code>AxonClient</code>](#AxonClient)  
 
-<a name="AxonClient+registerModule"></a>
+<a id="registermodule"></a>
 
 ### registerModule(module)
 Register a module.  
@@ -137,7 +140,7 @@ Register the module of the client entirely, also registering commands, aliases, 
 | --- | --- |
 | module | <code>Object.&lt;Module&gt;</code> | 
 
-<a name="AxonClient+unregisterModule"></a>
+<a id="unregistermodule"></a>
 
 ### unregisterModule(label)
 Unregister a module.  
@@ -149,7 +152,7 @@ Remove the module of the client, also removing commands, aliases, events, schema
 | --- | --- | --- |
 | label | <code>String</code> | Label of the module to unregister |
 
-<a name="AxonClient+sendFullHelp"></a>
+<a id="sendfullhelp"></a>
 
 ### sendFullHelp(msg) ⇒ <code>Promise.&lt;Message&gt;</code>
 Send full help in DM.  
@@ -162,7 +165,7 @@ Doesn't show commands that the user can't execute in the guild where the command
 | --- | --- | --- |
 | msg | <code>Object.&lt;Message&gt;</code> | The message object |
 
-<a name="AxonClient+fetchAxonConf"></a>
+<a id="fetchaxonconf"></a>
 
 ### fetchAxonConf() ⇒ <code>Promise.&lt;Object&gt;</code>
 Fetches and resolves the Axon config from the DB, creates a schema with all default values if none was found or there was an error.
@@ -170,7 +173,7 @@ Fetches and resolves the Axon config from the DB, creates a schema with all defa
 **Kind**: Instance method of [<code>AxonClient</code>](#AxonClient)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - Axon schema from the DB / error  
 
-<a name="AxonClient+fetchGuildConf"></a>
+<a id="fetchguildconf"></a>
 
 ### fetchGuildConf(gID) ⇒ <code>Promise.&lt;Object&gt;</code>
 Fetches and resolves the guild config of the given ID from the DB, creates a schema with all default values if none was found or there was an error.
@@ -182,7 +185,7 @@ Fetches and resolves the guild config of the given ID from the DB, creates a sch
 | --- | --- | --- |
 | gID | <code>String</code> | The guild ID to fetch the DB |
 
-<a name="AxonClient+resolvePrefix"></a>
+<a id="resolveprefix"></a>
 
 ### resolvePrefix(msg) ⇒ <code>String</code>
 Resolves the prefix for the guild of the message.  
@@ -195,7 +198,7 @@ If the message starts with one of the guild prefixes it returns the prefix, othe
 | --- | --- | --- |
 | msg | <code>Object.&lt;Message&gt;</code> | the message object |
 
-<a name="AxonClient+resolveCommand"></a>
+<a id="resolvecommand"></a>
 
 ### resolveCommand(label, args, guildConf) ⇒ <code>Object</code>
 Resolves the command Object.  
@@ -210,7 +213,7 @@ Only resolves the command if it's not globally disabled or guild disabled.
 | args | <code>Array.&lt;String&gt;</code> | Array of arguments |
 | guildConf | <code>Object</code> | Guild config from DB |
 
-<a name="AxonClient+getModule"></a>
+<a id="getmodule"></a>
 
 ### getModule(label) ⇒ <code>Object</code>
 Get a module from AxonClient with the given label.
@@ -222,7 +225,7 @@ Get a module from AxonClient with the given label.
 | --- | --- |
 | label | <code>String</code> | 
 
-<a name="AxonClient+getCommand"></a>
+<a id="getcommand"></a>
 
 ### getCommand(label) ⇒ <code>Object</code>
 Get a command or subcommand from AxonClient with the given full label.
@@ -234,7 +237,19 @@ Get a command or subcommand from AxonClient with the given full label.
 | --- | --- |
 | label | <code>String</code> | 
 
-<a name="AxonClient+getGuildConf"></a>
+<a id="getlisteners"></a>
+
+### getListeners(eventName) ⇒ <code>Array</code>
+Get all functions bound to the event passed in parameters.
+
+**Kind**: instance method of [<code>EventManager</code>](#EventManager)  
+**Returns**: <code>Array</code> - Array of the functions bound to the event  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| eventName | <code>String</code> | The Eris event name |
+
+<a id="getguildconf"></a>
 
 ### getGuildConf(gID) ⇒ <code>Promise.&lt;Object&gt;</code>
 Get (or create) the guildConfig of the given ID from cache or DB.  
@@ -247,7 +262,7 @@ Cache the guildConfig if it's not already cached in the guildCong Collection.
 | --- | --- |
 | gID | <code>String</code> | 
 
-<a name="AxonClient+updateGuildConf"></a>
+<a id="updateguildconf"></a>
 
 ### updateGuildConf(gID, guildSchema) ⇒ <code>Promise.&lt;Object&gt;</code>
 Update the guild config in the cache and DB.  
@@ -261,7 +276,7 @@ This methods uses the raw JSON object.
 | gID | <code>String</code> | Guild ID |
 | guildSchema | <code>Object</code> | Guild schema Object |
 
-<a name="AxonClient+registerGuildPrefix"></a>
+<a id="registerguildprefix"></a>
 
 ### registerGuildPrefix(gID, prefixArr) ⇒ <code>Promise.&lt;Object&gt;</code>
 Register a prefix for a guild.  
@@ -275,111 +290,14 @@ External method that can be called to update the cached prefix with the prefix r
 | gID | <code>String</code> | The guild ID |
 | prefixArr | <code>Array.&lt;String&gt;</code> | The array of prefix |
 
-<a name="AxonClient+updateBlacklistUser"></a>
-
-### updateBlacklistUser(userID, [boolean]) ⇒ <code>Promise.&lt;Object&gt;</code>
-Adds or removes a blacklisted user. (true = add to the blacklist, false = remove from the backlist)  
-External method that can be called to update the blacklist (update in cache and in DB).
-
-**Kind**: Instance method of [<code>AxonClient</code>](#AxonClient)  
-**Returns**: <code>Promise.&lt;Object&gt;</code> - The Axon Schema from the DB / Error  
-
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| userID | <code>String</code> |  | The ID of the user to blacklist |
-| [boolean] | <code>Boolean</code> | <code>true</code> | Whether to add(true) or remove(false) the user to blacklist |
-
-<a name="AxonClient+updateBlacklistGuild"></a>
-
-### updateBlacklistGuild(guildID, [boolean]) ⇒ <code>Promise.&lt;Object&gt;</code>
-Adds or removes a blacklisted guild. (true = add to the blacklist, false = remove from the backlist)  
-External method that can be called to update the blacklist (update in cache and in DB).
-
-**Kind**: Instance method of [<code>AxonClient</code>](#AxonClient)  
-**Returns**: <code>Promise.&lt;Object&gt;</code> - The Axon Schema from the DB / Error  
-
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| guildID | <code>String</code> |  | The ID of the guild to blacklist |
-| [boolean] | <code>Boolean</code> | <code>true</code> | if add(true) or remove(false) the guild to blacklist |
-
-<a name="AxonClient+updateGuildStateModule"></a>
-
-### updateGuildStateModule(guildID, label, [boolean]) ⇒ <code>Promise.&lt;Object&gt;</code>
-Updates the state of a module in a guild.  
-true = enable the event, false = disable the event.
-
-**Kind**: Instance method of [<code>AxonClient</code>](#AxonClient)  
-**Returns**: <code>Promise.&lt;Object&gt;</code> - Updated guildSchema / Error  
-
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| guildID | <code>String</code> |  | The guild ID |
-| label | <code>String</code> |  | The module label |
-| [boolean] | <code>Boolean</code> | <code>true</code> | If disable the module (false) or enable (true) |
-
-<a name="AxonClient+updateGuildStateCommand"></a>
-
-### updateGuildStateCommand(guildID, label, [boolean]) ⇒ <code>Promise.&lt;Object&gt;</code>
-Updates the state of a command in a guild.  
-true = enable the event, false = disable the event.
-
-**Kind**: Instance method of [<code>AxonClient</code>](#AxonClient)  
-**Returns**: <code>Promise.&lt;Object&gt;</code> - Updated guildSchema / Error  
-
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| guildID | <code>String</code> |  | The guild ID |
-| label | <code>String</code> |  | The command label |
-| [boolean] | <code>Boolean</code> | <code>true</code> | If disable the command (false) or enable (true) |
-
-<a name="AxonClient+updateGuildStateEvent"></a>
-
-### updateGuildStateEvent(guildID, label, [boolean]) ⇒ <code>Promise.&lt;Object&gt;</code>
-Updates the state of an event in  a guild.  
-true = enable the event, false = disable the event.
-
-**Kind**: Instance method of [<code>AxonClient</code>](#AxonClient)  
-**Returns**: <code>Promise.&lt;Object&gt;</code> - Updated guildSchema / Error  
-
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| guildID | <code>String</code> |  | The guild ID |
-| label | <code>String</code> |  | The event label |
-| [boolean] | <code>Boolean</code> | <code>true</code> | If disable the event (false) or enable (true) |
-
-<a name="AxonClient+updateGlobalStateModule"></a>
-
-### updateGlobalStateModule(module, [state])
-Enables or disables a Module globally.
-
-**Kind**: Instance method of [<code>AxonClient</code>](#AxonClient)  
-
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| module | <code>String</code> |  | Module name |
-| [state] | <code>Boolean</code> | <code>true</code> | Whether to enable or disable |
-
-<a name="AxonClient+updateGlobalStateCommand"></a>
-
-### updateGlobalStateCommand(command, [state])
-Enables or disables a Command globally.
-
-**Kind**: Instance method of [<code>AxonClient</code>](#AxonClient)  
-
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| command | <code>String</code> |  | Command name |
-| [state] | <code>Boolean</code> | <code>true</code> | Whether to enable or disable |
-
-<a name="AxonClient+toString"></a>
+<a id="tostring"></a>
 
 ### toString() ⇒ <code>String</code>
 ToString method.  
 
 **Kind**: Instance method of [<code>AxonClient</code>](#AxonClient)  
 
-<a name="AxonClient+toJSON"></a>
+<a id="tojson"></a>
 
 ### toJSON() ⇒ <code>Object</code>
 ToJSON method.  
@@ -387,10 +305,11 @@ ToJSON method.
 **Kind**: Instance method of [<code>AxonClient</code>](#AxonClient)  
 **Returns**: <code>Object</code> - JSON-like Object  
 
+<a id="inspect"></a>
+
 ### inspect() ⇒ <code>Object</code>
 Custom inspect method.  
 Doesn't list prefixed property and undefined property.
 
 **Kind**: Instance method of [<code>AxonClient</code>](#AxonClient)  
 **Returns**: <code>Object</code> - JSON-like Object 
-

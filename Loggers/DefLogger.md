@@ -1,36 +1,44 @@
-<a name="DefLogger"></a>
+<a id="deflogger"></a>
 
 ## DefLogger ⇐ <code>Console</code>
+Default Logger with timestamps and custom methods. Doesn't use any dependencies.  
+
 **Kind**: global class  
 **Extends**: <code>Console</code>  
 **Author**: KhaaZ  
 
-* [DefLogger](#DefLogger) ⇐ <code>Console</code>
-    * [new DefLogger()](#new_DefLogger_new)
-    * [emerg(input, opt)](#DefLogger+emerg)
-    * [error(input, opt)](#DefLogger+error)
-    * [warn(input, opt)](#DefLogger+warn)
-    * [debug(input, opt)](#DefLogger+debug)
-    * [notice(input, opt)](#DefLogger+notice)
-    * [info(input, opt)](#DefLogger+info)
-    * [verbose(input, opt)](#DefLogger+verbose)
-    * [axon(input)](#DefLogger+axon)
-    * [init(input)](#DefLogger+init)
-    * [initModule(module)](#DefLogger+initModule)
-    * [initCommand(command)](#DefLogger+initCommand)
-    * [initSubCmd(sub)](#DefLogger+initSubCmd)
-    * [initEvent(sub)](#DefLogger+initEvent)
+[DefLogger](#DefLogger) ⇐ <code>Console</code>
+- _static_
+  - [DefLogger](#DefLogger)
+    - [new DefLogger()](#DefLogger_new)
+- _instance_
+  - [emerg(input, opt)](#emerg)
+  - [error(input, opt)](#error)
+  - [warn(input, opt)](#warn)
+  - [debug(input, opt)](#debug)
+  - [notice(input, opt)](#notice)
+  - [info(input, opt)](#info)
+  - [verbose(input, opt)](#verbose)
+  - [axon(input)](#axon)
+  - [init(input)](#init)
 
-<a name="new_DefLogger_new"></a>
+<a id="deflogger_new"></a>
 
 ### new DefLogger()
-A default Logger that has time and custom methods
-Allows clean logging without any dependency
+A default Logger that has time and custom methods.  
+A context Object is made as:  
 
-<a name="DefLogger+emerg"></a>
+| Param | Type | Description |
+| --- | --- | --- |
+| [context] | <code>Object</code> | Optional Object to pass with contextual informations |
+| [context.guildObj] | <code>Object</code> | The guild Object |
+| [context.cmd] | <code>String</code> | The command name |
+| [context.user] | <code>Object</code> | The user Object |
 
-### defLogger.emerg(input, opt)
-Major - Critical fault
+<a id="emerg"></a>
+
+### emerg(input, opt)
+Major - Critical fault  
 Crashing bugs, unexpected...
 
 **Kind**: instance method of [<code>DefLogger</code>](#DefLogger)  
@@ -40,9 +48,9 @@ Crashing bugs, unexpected...
 | input | <code>String</code> |  |
 | opt | <code>Object</code> | context object |
 
-<a name="DefLogger+error"></a>
+<a id="error"></a>
 
-### defLogger.error(input, opt)
+### error(input, opt)
 Major - critical error
 
 **Kind**: instance method of [<code>DefLogger</code>](#DefLogger)  
@@ -52,11 +60,10 @@ Major - critical error
 | input | <code>String</code> |  |
 | opt | <code>Object</code> | context object |
 
-<a name="DefLogger+warn"></a>
+<a id="warn"></a>
 
-### defLogger.warn(input, opt)
-Warns - non critcal
-Expected errors
+### warn(input, opt)
+Warnings - Expected errors
 
 **Kind**: instance method of [<code>DefLogger</code>](#DefLogger)  
 
@@ -65,9 +72,9 @@ Expected errors
 | input | <code>String</code> |  |
 | opt | <code>Object</code> | context object |
 
-<a name="DefLogger+debug"></a>
+<a id="debug"></a>
 
-### defLogger.debug(input, opt)
+### debug(input, opt)
 Eval - Debugging logs
 
 **Kind**: instance method of [<code>DefLogger</code>](#DefLogger)  
@@ -77,9 +84,9 @@ Eval - Debugging logs
 | input | <code>String</code> |  |
 | opt | <code>Object</code> | context object |
 
-<a name="DefLogger+notice"></a>
+<a id="notice"></a>
 
-### defLogger.notice(input, opt)
+### notice(input, opt)
 Important information
 
 **Kind**: instance method of [<code>DefLogger</code>](#DefLogger)  
@@ -89,9 +96,9 @@ Important information
 | input | <code>String</code> |  |
 | opt | <code>Object</code> | context object |
 
-<a name="DefLogger+info"></a>
+<a id="info"></a>
 
-### defLogger.info(input, opt)
+### info(input, opt)
 Default information
 
 **Kind**: instance method of [<code>DefLogger</code>](#DefLogger)  
@@ -101,11 +108,10 @@ Default information
 | input | <code>String</code> |  |
 | opt | <code>Object</code> | context object |
 
-<a name="DefLogger+verbose"></a>
+<a id="verbose"></a>
 
-### defLogger.verbose(input, opt)
-Other Logging
-Commands usage...
+### verbose(input, opt)
+Other logs - executed commands, etc...
 
 **Kind**: instance method of [<code>DefLogger</code>](#DefLogger)  
 
@@ -114,9 +120,9 @@ Commands usage...
 | input | <code>String</code> |  |
 | opt | <code>Object</code> | context object |
 
-<a name="DefLogger+axon"></a>
+<a id="axon"></a>
 
-### defLogger.axon(input)
+### axon(input)
 AxonClient information
 
 **Kind**: instance method of [<code>DefLogger</code>](#DefLogger)  
@@ -125,9 +131,9 @@ AxonClient information
 | --- | --- |
 | input | <code>String</code> | 
 
-<a name="DefLogger+init"></a>
+<a id="init"></a>
 
-### defLogger.init(input)
+### init(input)
 Initialization - Client info
 
 **Kind**: instance method of [<code>DefLogger</code>](#DefLogger)  
@@ -135,48 +141,3 @@ Initialization - Client info
 | Param | Type |
 | --- | --- |
 | input | <code>String</code> | 
-
-<a name="DefLogger+initModule"></a>
-
-### defLogger.initModule(module)
-Initialization - Module info
-
-**Kind**: instance method of [<code>DefLogger</code>](#DefLogger)  
-
-| Param | Type |
-| --- | --- |
-| module | <code>Module</code> | 
-
-<a name="DefLogger+initCommand"></a>
-
-### defLogger.initCommand(command)
-Initialization - Command info
-
-**Kind**: instance method of [<code>DefLogger</code>](#DefLogger)  
-
-| Param | Type |
-| --- | --- |
-| command | <code>Command</code> | 
-
-<a name="DefLogger+initSubCmd"></a>
-
-### defLogger.initSubCmd(sub)
-Initialization - SubCommand info
-
-**Kind**: instance method of [<code>DefLogger</code>](#DefLogger)  
-
-| Param | Type |
-| --- | --- |
-| sub | <code>Command</code> | 
-
-<a name="DefLogger+initEvent"></a>
-
-### defLogger.initEvent(sub)
-Initialization - SubCommand info
-
-**Kind**: instance method of [<code>DefLogger</code>](#DefLogger)  
-
-| Param | Type |
-| --- | --- |
-| sub | <code>Command</code> | 
-

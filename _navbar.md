@@ -17,15 +17,15 @@
   * [Utils](Utility/Utils.md)
   * [Resolver](Utility/Resolver.md)
   * [Collection](Utility/Collection.md)
+  * [Embed](Utility/Embed.md)
+  * [Prompt](Utility/Prompt.md)
+  * [MessageCollector](Utility/MessageCollector.md)
 
 * **[Logging](Loggers/index.md)**
   * [Default](Loggers/DefLogger.md)
-  * [Chalk](Loggers/ChalkLogger.md)
-  * [Signale](Loggers/SignaleLogger.md)
 
 * **[Database](Database/index.md)**
-  * [Mongo](Database/Mongo.md)
-  * [Json](Database/Json.md)
+  * [DBService](Database/DBService.md)
 
 * **[About](About.md)**
   * [EASE](https://github.com/AxonTeam/Ease)
