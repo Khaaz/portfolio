@@ -20,6 +20,6 @@ git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 git commit -m "deploy"
 
 # if you are deploying to https://<USERNAME>.github.io
-git push -f master
+git push -f --set-upstream master master
 
 cd -
