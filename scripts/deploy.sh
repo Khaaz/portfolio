@@ -3,8 +3,6 @@
 # abort on errors
 set -e
 
-echo $GITHUB_ACTOR
-
 # navigate into the build output directory
 cd dist
 
@@ -12,10 +10,16 @@ cd dist
 echo 'khaaz.me' > CNAME
 
 git init
+git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/khaaz.github.io.git"
+
 git add -A
-git commit -m 'deploy'
+
+git config user.name "${GITHUB_ACTOR}"
+git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
+git commit -m "deploy"
 
 # if you are deploying to https://<USERNAME>.github.io
-git push -f https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com:Khaaz/khaaz.github.io.git master
+git push -f master
 
 cd -
