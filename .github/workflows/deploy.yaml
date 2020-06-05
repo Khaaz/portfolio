@@ -19,5 +19,5 @@ jobs:
     - name: Deploy
       run: ./scripts/deploy.sh
       env:
-        GH_TOKEN: {{ secrets.GH_TOKEN }}
+        GH_TOKEN: ${{secrets.GH_TOKEN}}
         CI: true
