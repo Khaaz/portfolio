@@ -3,6 +3,8 @@
 # abort on errors
 set -e
 
+echo $GITHUB_ACTOR
+
 # navigate into the build output directory
 cd dist
 
