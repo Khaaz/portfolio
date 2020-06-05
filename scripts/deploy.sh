@@ -3,8 +3,8 @@
 # abort on errors
 set -e
 
-git config user.name "${GITHUB_ACTOR}"
-git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+git config user.name "$GITHUB_ACTOR"
+git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
 # navigate into the build output directory
 cd dist
