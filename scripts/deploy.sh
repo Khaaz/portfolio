@@ -9,6 +9,7 @@ cd dist
 # if you are deploying to a custom domain
 echo 'khaaz.me' > CNAME
 
+git config --global init.defaultBranch main
 git init
 git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/khaaz.github.io.git"
 
